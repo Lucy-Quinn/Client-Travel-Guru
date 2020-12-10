@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import LandingPage from './pages/LandingPage/LandingPage';
 import Signup from './pages/Signup/Signup';
 import Login from './pages/Login/Login';
-import Private from './pages/Private';
+import Profile from './pages/Profile/Profile';
 
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
@@ -26,7 +26,9 @@ class App extends Component {
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
-          <PrivateRoute exact path="/private" component={Private} />
+          {/* <PrivateRoute exact path="/private" component={Private} /> */}
+          <PrivateRoute exact path="/profile/:userId" component={Profile} />
+
         </Switch>
       </div>
     );

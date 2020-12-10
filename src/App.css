@@ -1,16 +1,17 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 .App {
-  padding: 20px;;
+  padding: 20px;
 }
 
-nav.navbar { 
+nav.navbar {
   display: flex;
   padding: 0px 20px;
-  background: #686de0; 
+  background: #686de0;
 }
 
 button.navbar-button {

@@ -5,10 +5,13 @@ import App from './App';
 
 import { AuthProvider } from './context/auth-context';
 
+//bootstrap css
+import 'bootstrap/dist/css/bootstrap.css';
+
 ReactDOM.render(
   <Router>
     <AuthProvider>
       <App />
     </AuthProvider>
   </Router>
-, document.getElementById('root'));
+  , document.getElementById('root'));

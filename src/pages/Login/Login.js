@@ -34,8 +34,8 @@ class Login extends Component {
 
 
           <input type="submit" value="Login" />
-          <Link to="/signup">
-            <input type="submit" value="Sign Up" />
+          <Link exact to="/signup">
+            <button>Sign Up</button>
           </Link>
 
         </form>

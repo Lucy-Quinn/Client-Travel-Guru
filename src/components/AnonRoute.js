@@ -4,7 +4,7 @@ import { withAuth } from './../context/auth-context';
 
 // Route that only allows access to a user who is not logged in
 
-function AnonRoute (routeProps) {
+function AnonRoute(routeProps) {
   // Value coming from `AuthProvider` ( via `withAuth` )
   const { isLoggedIn, isLoading } = routeProps;
 
@@ -20,13 +20,13 @@ function AnonRoute (routeProps) {
       exact={exact}
       path={path}
       render={
-        function(props) {
-          if (isLoggedIn) return <Redirect to="/private" />
-          else if (! isLoggedIn) return <ComponentToShow {...props} />
+        function (props) {
+          if (isLoggedIn) return <Redirect to="/dashboard" />
+          else if (!isLoggedIn) return <ComponentToShow {...props} />
         }
       }
-     />
-    )
+    />
+  )
 }
 
 

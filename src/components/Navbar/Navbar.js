@@ -11,10 +11,14 @@ class Navbar extends Component {
           <h4>Home</h4>
         </Link>
         {this.props.isLoggedIn ? (
-          <>
+          <div>
+
             <p>username: {this.props.user && this.props.user.username}</p>
             <button onClick={this.props.logout}>Logout</button>
-          </>
+            <Link to={`/profile/${this.props.user._id}`}>
+              Profile
+            </Link>
+          </div>
         ) : (
             <>
               <Link to="/login">

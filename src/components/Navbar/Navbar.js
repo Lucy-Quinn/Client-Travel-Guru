@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { withAuth } from './../context/auth-context';
+import { withAuth } from '../../context/auth-context';
 
 class Navbar extends Component {
   render() {
@@ -16,16 +16,16 @@ class Navbar extends Component {
             <button onClick={this.props.logout}>Logout</button>
           </>
         ) : (
-          <>
-            <Link to="/login">
-              <button className="navbar-button">Login</button>{' '}
-            </Link>
-            <br />
-            <Link to="/signup">
-              <button className="navbar-button">Sign Up</button>{' '}
-            </Link>
-          </>
-        )}
+            <>
+              <Link to="/login">
+                <button className="navbar-button">Login</button>{' '}
+              </Link>
+              <br />
+              <Link to="/signup">
+                <button className="navbar-button">Sign Up</button>{' '}
+              </Link>
+            </>
+          )}
       </nav>
     );
   }

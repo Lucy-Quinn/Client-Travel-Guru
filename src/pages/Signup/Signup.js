@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import { withAuth } from './../context/auth-context';
+import { Link } from "react-router-dom";
+import { withAuth } from '../../context/auth-context';
 
-class Login extends Component {
+class Signup extends Component {
   state = { username: "", password: "" };
 
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
-    // Call funciton coming from AuthProvider ( via withAuth )
-    this.props.login(username, password);
+
+    this.props.signup(username, password);
   };
 
   handleChange = event => {
@@ -18,24 +19,32 @@ class Login extends Component {
 
   render() {
     const { username, password } = this.state;
-
     return (
       <div>
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
 
         <form onSubmit={this.handleFormSubmit}>
-          
+
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange}/>
+          <input type="text" name="username" value={username} onChange={this.handleChange} />
 
           <label>Password:</label>
           <input type="password" name="password" value={password} onChange={this.handleChange} />
 
-          <input type="submit" value="Login" />
+          <input type="submit" value="Signup" />
         </form>
+
+        <p>Already have account?</p>
+        <Link to={"/login"}> Login</Link>
       </div>
     );
   }
 }
 
-export default withAuth(Login);
+
+
+export default withAuth(Signup);
+
+
+// const EnhancedSignup = withAuth(Signup)
+// export default EnhancedSignup;

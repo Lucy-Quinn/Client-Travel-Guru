@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
+import Navbar from './components/Navbar/Navbar';
+import LandingPage from './pages/LandingPage/LandingPage';
+import Signup from './pages/Signup/Signup';
+import Login from './pages/Login/Login';
 import Private from './pages/Private';
 
 import AnonRoute from './components/AnonRoute';
@@ -20,7 +20,7 @@ class App extends Component {
         <Navbar />
 
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={LandingPage} />
 
 
           <AnonRoute exact path="/signup" component={Signup} />

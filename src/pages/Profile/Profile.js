@@ -11,7 +11,8 @@ class Profile extends React.Component {
         nationality: "",
         myFavoriteTrip: "",
         description: "",
-        image: ""
+        image: "",
+        _id: ""
     }
 
 
@@ -22,9 +23,8 @@ class Profile extends React.Component {
         axios
             .get(`${process.env.REACT_APP_API_URI}/api/profile/${userId}`, { withCredentials: true })
             .then((response) => {
-                console.log('resopnseeee', response.data)
-                const { name, username, nationality, myFavoriteTrip, description, image } = response.data;
-                this.setState({ name, username, nationality, myFavoriteTrip, description, image })
+                const { name, username, nationality, myFavoriteTrip, description, image, _id } = response.data;
+                this.setState({ name, username, nationality, myFavoriteTrip, description, image, _id })
             })
             .catch((err) => console.log(err));
     }
@@ -35,7 +35,7 @@ class Profile extends React.Component {
                 <div>
                     <img src={this.state.image} alt='User profile' />
                     <h2>{this.state.name}</h2>
-                    <Link to="/editProfile/:userId">Edit Profile</Link>
+                    <Link to={{ pathname: `/api/editProfile/${this.state._id}`, user: this.state }}>Edit Profile</Link>
                 </div>
                 <div>
                     <p>{this.state.email}</p>
@@ -45,13 +45,13 @@ class Profile extends React.Component {
                     <p>{this.state.description}</p>
                 </div>
                 <div>
-                    <Link exact to='/editProfile/:userid'>
+                    <Link exact to={`/api/favoritePost/${this.state._id}`}>
                         <button>Favorite Posts</button>
                     </Link>
-                    <Link exact to='/createPost'>
+                    <Link exact to='/api/createPost'>
                         <button>Create a Post</button>
                     </Link>
-                    <Link exact to='/travelLog/:userid'>
+                    <Link exact to={`/api/travelLog/${this.state._id}`}>
                         <button>Travel Log</button>
                     </Link>
                 </div>

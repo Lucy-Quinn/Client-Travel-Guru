@@ -10,6 +10,7 @@ import Profile from './pages/Profile/Profile';
 
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
+import EditProfile from './pages/EditProfile/EditProfile';
 
 
 
@@ -27,7 +28,8 @@ class App extends Component {
           <AnonRoute exact path="/login" component={Login} />
 
           {/* <PrivateRoute exact path="/private" component={Private} /> */}
-          <PrivateRoute exact path="/profile/:userId" component={Profile} />
+          <PrivateRoute exact path="/api/profile/:userId" component={Profile} />
+          <PrivateRoute exact path="/api/editProfile/:userId" component={EditProfile} />
 
         </Switch>
       </div>

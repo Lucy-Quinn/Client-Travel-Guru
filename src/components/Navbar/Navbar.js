@@ -15,7 +15,7 @@ class Navbar extends Component {
 
             <p>username: {this.props.user && this.props.user.username}</p>
             <button onClick={this.props.logout}>Logout</button>
-            <Link to={`/profile/${this.props.user._id}`}>
+            <Link to={`/api/profile/${this.props.user._id}`}>
               Profile
             </Link>
           </div>

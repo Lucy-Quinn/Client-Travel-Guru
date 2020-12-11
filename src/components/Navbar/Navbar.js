@@ -7,12 +7,12 @@ class Navbar extends Component {
     // const { user, logout, isLoggedin } = this.props;
     return (
       <nav className="navbar">
-        <Link to={'/'} id='home-btn'>
-          <h4>Home</h4>
-        </Link>
+
         {this.props.isLoggedIn ? (
           <div>
-
+            <Link to={'/dashboard'} id='home-btn'>
+              <h4>Home</h4>
+            </Link>
             <p>username: {this.props.user && this.props.user.username}</p>
             <button onClick={this.props.logout}>Logout</button>
             <Link to={`/profile/${this.props.user._id}`}>
@@ -20,7 +20,10 @@ class Navbar extends Component {
             </Link>
           </div>
         ) : (
-            <>
+            <div>
+              <Link to={'/'} id='home-btn'>
+                <h4>Home</h4>
+              </Link>
               <Link to="/login">
                 <button className="navbar-button">Login</button>{' '}
               </Link>
@@ -28,7 +31,7 @@ class Navbar extends Component {
               <Link to="/signup">
                 <button className="navbar-button">Sign Up</button>{' '}
               </Link>
-            </>
+            </div>
           )}
       </nav>
     );

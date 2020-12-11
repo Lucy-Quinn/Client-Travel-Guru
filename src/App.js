@@ -11,6 +11,8 @@ import Profile from './pages/Profile/Profile';
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
 import EditProfile from './pages/EditProfile/EditProfile';
+import Dashboard from './pages/Dashboard/Dashboard';
+
 
 
 
@@ -30,6 +32,7 @@ class App extends Component {
           {/* <PrivateRoute exact path="/private" component={Private} /> */}
           <PrivateRoute exact path="/profile/:userId" component={Profile} />
           <PrivateRoute exact path="/editProfile/:userId" component={EditProfile} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
         </Switch>
       </div>

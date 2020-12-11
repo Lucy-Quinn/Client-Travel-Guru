@@ -8,20 +8,22 @@ class AuthService {
     });
   }
 
-  signup( username, password ) {
+  signup(name, username, email, password, image) {
+    console.log('stringname', name, 'stringusername', username, 'stringemail', email, 'stringpassword', password, 'stringimage', image)
+
     const pr = this.auth
-      .post("/auth/signup", { username, password })
+      .post("/auth/signup", { name, username, email, password, image })
       .then((response) => response.data);
-      // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
+    // .then(({ data }) => data); // Shorter way of `.then((response) => response.data);`
 
     return pr;
   }
 
-  login( username, password ) {
+  login(username, password) {
     const pr = this.auth
       .post("/auth/login", { username, password })
       .then((response) => response.data);
-      
+
     return pr;
   }
 

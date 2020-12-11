@@ -4,7 +4,7 @@ import { withAuth } from './../context/auth-context';
 
 // Route that forbids access to a user who is not logged in
 
-function PrivateRoute (routeProps) {
+function PrivateRoute(routeProps) {
   // Value coming from `AuthProvider` ( via `withAuth` )
   const { isLoggedIn, isLoading } = routeProps;
 
@@ -20,26 +20,26 @@ function PrivateRoute (routeProps) {
       exact={exact}
       path={path}
       render={
-        function(props) {
-          if (! isLoggedIn) return <Redirect to="/login" />;
+        function (props) {
+          if (!isLoggedIn) return <Redirect to="/auth/login" />;
           else if (isLoggedIn) return <ComponentToShow {...props} />;
         }
       }
-     />
-    )
+    />
+  )
 }
 
 
 export default withAuth(PrivateRoute);
 
 
-/* 
+/*
 // Concise way
 function PrivateRoute({ component: Component, isLoggedIn, ...rest }) {
   return (
    <Route
     {...rest}
     render={ (props)  => isLoggedIn ? <Component {...props} /> : <Redirect to="/login" />}
-   /> 
-)} 
+   />
+)}
 */

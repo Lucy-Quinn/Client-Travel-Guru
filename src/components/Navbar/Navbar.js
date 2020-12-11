@@ -21,11 +21,11 @@ class Navbar extends Component {
           </div>
         ) : (
             <>
-              <Link to="/login">
+              <Link to="/auth/login">
                 <button className="navbar-button">Login</button>{' '}
               </Link>
               <br />
-              <Link to="/signup">
+              <Link to="/auth/signup">
                 <button className="navbar-button">Sign Up</button>{' '}
               </Link>
             </>

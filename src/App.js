@@ -24,8 +24,8 @@ class App extends Component {
           <Route exact path="/" component={LandingPage} />
 
 
-          <AnonRoute exact path="/signup" component={Signup} />
-          <AnonRoute exact path="/login" component={Login} />
+          <AnonRoute exact path="/auth/signup" component={Signup} />
+          <AnonRoute exact path="/auth/login" component={Login} />
 
           {/* <PrivateRoute exact path="/private" component={Private} /> */}
           <PrivateRoute exact path="/api/profile/:userId" component={Profile} />

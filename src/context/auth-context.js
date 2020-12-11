@@ -11,22 +11,22 @@ class AuthProvider extends React.Component {
     user: null
   }
 
-  componentDidMount () {
+  componentDidMount() {
     authService.me()
-     .then((user) => this.setState({ isLoggedIn: true, user: user, isLoading: false }))
-     .catch((err) => this.setState({ isLoggedIn: false, user: null, isLoading: false }));
+      .then((user) => this.setState({ isLoggedIn: true, user: user, isLoading: false }))
+      .catch((err) => this.setState({ isLoggedIn: false, user: null, isLoading: false }));
   }
 
-  signup = (username, password) => {
-    authService.signup( username, password )
-      .then((user) => this.setState({ isLoggedIn: true, user }) )
+  signup = (name, username, password, email, image) => {
+    authService.signup(name, username, password, email, image)
+      .then((user) => this.setState({ isLoggedIn: true, user }))
       .catch((err) => {
         this.setState({ isLoggedIn: false, user: null });
       })
   }
 
   login = (username, password) => {
-    authService.login( username, password )
+    authService.login(username, password)
       .then((user) => this.setState({ isLoggedIn: true, user }))
       .catch((err) => {
         this.setState({ isLoggedIn: false, user: null });
@@ -46,7 +46,7 @@ class AuthProvider extends React.Component {
 
     if (isLoading) return <p>Loading</p>;
 
-    return(
+    return (
       <Provider value={{ isLoggedIn, isLoading, user, signup, login, logout }}  >
         {this.props.children}
       </Provider>
@@ -58,29 +58,29 @@ class AuthProvider extends React.Component {
 
 // HOC that converts regular component into a Consumer
 const withAuth = (WrappedComponent) => {
-  
+
   return class extends React.Component {
     render() {
-      return(
+      return (
         <Consumer>
           { (value) => {
             const { isLoggedIn, isLoading, user, signup, login, logout } = value;
 
-            return (<WrappedComponent 
-                      {...this.props}
-                      isLoggedIn={isLoggedIn} 
-                      isLoading={isLoading} 
-                      user={user} 
-                      signup={signup} 
-                      login={login} 
-                      logout={logout}
-                    />)
+            return (<WrappedComponent
+              {...this.props}
+              isLoggedIn={isLoggedIn}
+              isLoading={isLoading}
+              user={user}
+              signup={signup}
+              login={login}
+              logout={logout}
+            />)
 
-          } }
+          }}
         </Consumer>
-        )
+      )
     }
-}
+  }
 }
 
 

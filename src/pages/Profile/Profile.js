@@ -5,44 +5,37 @@ import { Link } from 'react-router-dom';
 
 
 class Profile extends React.Component {
+
     state = {
-        name: "",
-        username: "",
-        nationality: "",
-        myFavoriteTrip: "",
-        description: "",
-        image: "",
-        _id: ""
     }
-
-
 
     componentDidMount() {
         const { userId } = this.props.match.params;
-
         axios
             .get(`${process.env.REACT_APP_API_URI}/api/profile/${userId}`, { withCredentials: true })
             .then((response) => {
-                const { name, username, nationality, myFavoriteTrip, description, image, _id } = response.data;
-                this.setState({ name, username, nationality, myFavoriteTrip, description, image, _id })
+                console.log('response', response.data)
+                const { name, username, nationality, email, myFavoriteTrip, description, image, _id } = response.data;
+                this.setState({ name, username, nationality, email, myFavoriteTrip, description, image, _id })
             })
             .catch((err) => console.log(err));
     }
 
     render() {
+        console.log('stte', this.state)
         return (
             <div>
                 <div>
                     <img src={this.state.image} alt='User profile' />
-                    <h2>{this.state.name}</h2>
-                    <Link to={{ pathname: `/api/editProfile/${this.state._id}`, user: this.state }}>Edit Profile</Link>
+                    <h2>name {this.state.name}</h2>
+                    <Link to={{ pathname: `/api/editProfile/${this.state._id}`, state: { userInfo: this.state } }}>Edit Profile</Link>
                 </div>
                 <div>
-                    <p>{this.state.email}</p>
-                    <p>{this.state.username}</p>
-                    <p>{this.state.nationality}</p>
-                    <p>{this.state.myFavoriteTrip}</p>
-                    <p>{this.state.description}</p>
+                    <p>email {this.state.email}</p>
+                    <p>username {this.state.username}</p>
+                    <p>nationality {this.state.nationality}</p>
+                    <p>fav trip {this.state.myFavoriteTrip}</p>
+                    <p>description {this.state.description}</p>
                 </div>
                 <div>
                     <Link exact to={`/api/favoritePost/${this.state._id}`}>

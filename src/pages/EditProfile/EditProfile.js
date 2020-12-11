@@ -7,16 +7,34 @@ import { Route, Redirect } from 'react-router-dom';
 class EditProfile extends React.Component {
 
     state = {
-        name: this.props.location.state.userInfo.name,
-        username: this.props.location.state.userInfo.username,
-        nationality: this.props.location.state.userInfo.nationality,
-        myFavoriteTrip: this.props.location.state.userInfo.myFavoriteTrip,
-        description: this.props.location.state.userInfo.description,
-        image: this.props.location.state.userInfo.image
+        name: undefined,
+        username: undefined,
+        nationality: undefined,
+        myFavoriteTrip: undefined,
+        description: undefined,
+        image: undefined,
+        isReady: false
     }
 
+    componentDidMount() {
+        const { userId } = this.props.match.params;
+        if (this.props.location.state) {
+            this.setState({
+                name: this.props.location.state.userInfo.name,
+                username: this.props.location.state.userInfo.username,
+                nationality: this.props.location.state.userInfo.nationality,
+                myFavoriteTrip: this.props.location.state.userInfo.myFavoriteTrip,
+                description: this.props.location.state.userInfo.description,
+                image: this.props.location.state.userInfo.image
+            })
+        } else {
+            this.props.history.push(`/profile/${userId}`);
+        }
+    }
+
+
     handleChange = (event) => {
-        console.log('TARGEETTT', event.target)
+        // console.log('TARGEETTT', event.target)
         const { name, value } = event.target;
         this.setState({ [name]: value })
         //                ▲  Assign value to property using "object bracket notataion"
@@ -34,7 +52,8 @@ class EditProfile extends React.Component {
             { name, username, nationality, myFavoriteTrip, description, image }, { withCredentials: true }
         )
             .then(() => {
-                <Redirect to={`/editProfile/${userId}`} />
+                // <Redirect to={`api/profile/${userId}`} />
+                this.props.history.push(`/profile/${userId}`);
             })
             .catch((err) => console.log(err))
     }
@@ -56,7 +75,8 @@ class EditProfile extends React.Component {
             .then((response) => {
                 console.log("response is: ", response);
                 // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-                this.setState({ image: response.data.secure_url });
+                // this.setState({ image: response.data.secure_url });
+                this.setState({ image: response.data.secure_url, isReady: true });
 
             })
             .catch((err) => {
@@ -66,7 +86,6 @@ class EditProfile extends React.Component {
 
 
     render() {
-        console.log('nationaltiiy', this.props)
         return (
 
             <div>
@@ -122,7 +141,8 @@ class EditProfile extends React.Component {
                                 alt=""
                             ></img>
                         </span>
-                        <input type="submit" value="Submit" />
+
+                        <input type="submit" value="Submit" disabled={!this.state.isReady} />
                     </form>
 
                 </div>

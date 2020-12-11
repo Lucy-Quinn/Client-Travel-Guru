@@ -15,17 +15,17 @@ class Navbar extends Component {
 
             <p>username: {this.props.user && this.props.user.username}</p>
             <button onClick={this.props.logout}>Logout</button>
-            <Link to={`/api/profile/${this.props.user._id}`}>
+            <Link to={`/profile/${this.props.user._id}`}>
               Profile
             </Link>
           </div>
         ) : (
             <>
-              <Link to="/auth/login">
+              <Link to="/login">
                 <button className="navbar-button">Login</button>{' '}
               </Link>
               <br />
-              <Link to="/auth/signup">
+              <Link to="/signup">
                 <button className="navbar-button">Sign Up</button>{' '}
               </Link>
             </>

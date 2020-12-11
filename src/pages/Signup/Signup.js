@@ -10,7 +10,8 @@ class Signup extends Component {
     username: "",
     email: "",
     password: "",
-    image: ""
+    image: "",
+    imageReady: false
   };
 
 
@@ -23,13 +24,14 @@ class Signup extends Component {
 
 
   handleFormSubmit = event => {
-    console.log('email handleformsubmit from signup', this.state)
+    // console.log('email handleformsubmit from signup', this.state)
     event.preventDefault();
     const { name, username, email, password, image } = this.state;
-    image ?
+    if (image) {
       this.props.signup(name, username, email, password, image)
-      :
+    } else {
       this.props.signup(name, username, email, password);
+    }
   };
 
 
@@ -45,9 +47,9 @@ class Signup extends Component {
     axios
       .post(`${process.env.REACT_APP_API_URI}/auth/upload`, uploadData, { withCredentials: true })
       .then((response) => {
-        console.log("response is: ", response);
+        // console.log("response is: ", response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-        this.setState({ image: response.data.secure_url });
+        this.setState({ image: response.data.secure_url, isReady: true });
 
       })
       .catch((err) => {
@@ -78,11 +80,11 @@ class Signup extends Component {
           <label>Image:</label>
           <input type="file" onChange={this.handleFileUpload} />
 
-          <input type="submit" value="Signup" />
+          <input type="submit" value="Signup" disabled={!this.state.isReady} />
         </form>
 
         <p>Already have account?</p>
-        <Link to={"/auth/login"}> Login</Link>
+        <Link to={"/login"}> Login</Link>
       </div>
     );
   }

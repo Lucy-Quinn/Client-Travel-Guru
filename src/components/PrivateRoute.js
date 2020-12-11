@@ -21,7 +21,7 @@ function PrivateRoute(routeProps) {
       path={path}
       render={
         function (props) {
-          if (!isLoggedIn) return <Redirect to="/auth/login" />;
+          if (!isLoggedIn) return <Redirect to="/login" />;
           else if (isLoggedIn) return <ComponentToShow {...props} />;
         }
       }

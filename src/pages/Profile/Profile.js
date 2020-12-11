@@ -28,7 +28,12 @@ class Profile extends React.Component {
                 <div>
                     <img src={this.state.image} alt='User profile' />
                     <h2>name {this.state.name}</h2>
-                    <Link to={{ pathname: `/api/editProfile/${this.state._id}`, state: { userInfo: this.state } }}>Edit Profile</Link>
+                    <Link to={
+                        {
+                            pathname: `/editProfile/${this.state._id}`,
+                            state: { userInfo: this.state }
+                        }
+                    }>Edit Profile</Link>
                 </div>
                 <div>
                     <p>email {this.state.email}</p>
@@ -38,13 +43,13 @@ class Profile extends React.Component {
                     <p>description {this.state.description}</p>
                 </div>
                 <div>
-                    <Link exact to={`/api/favoritePost/${this.state._id}`}>
+                    <Link exact to={`/favoritePost/${this.state._id}`}>
                         <button>Favorite Posts</button>
                     </Link>
-                    <Link exact to='/api/createPost'>
+                    <Link exact to='/createPost'>
                         <button>Create a Post</button>
                     </Link>
-                    <Link exact to={`/api/travelLog/${this.state._id}`}>
+                    <Link exact to={`/travelLog/${this.state._id}`}>
                         <button>Travel Log</button>
                     </Link>
                 </div>

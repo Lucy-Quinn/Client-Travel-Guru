@@ -9,17 +9,31 @@ class Navbar extends Component {
       <nav className="navbar">
 
         {this.props.isLoggedIn ? (
+          //When logged in
           <div>
             <Link to={'/dashboard'} id='home-btn'>
-              <h4>Home</h4>
+              <h4>Search for Travel Posts</h4>
             </Link>
             <p>username: {this.props.user && this.props.user.username}</p>
             <button onClick={this.props.logout}>Logout</button>
             <Link to={`/profile/${this.props.user._id}`}>
               Profile
             </Link>
+            <Link to={`/createPost}`}>
+              Create Post
+            </Link>
+            <Link to={`/myPosts/${this.props.user._id}}`}>
+              My Posts
+            </Link>
+            <Link to={`/favoritePosts/${this.props.user._id}`}>
+              My Favorites
+            </Link>
+            <Link to={`/travelLogs`}>
+              My Travel Log
+            </Link>
           </div>
         ) : (
+            //When logged out
             <div>
               <Link to={'/'} id='home-btn'>
                 <h4>Home</h4>

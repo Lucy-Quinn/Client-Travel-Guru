@@ -1,12 +1,17 @@
-import React from 'react'
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Card extends React.Component {
     render() {
         console.log('propssss', this.props);
         return (
             <div>
-                <h1>{this.props.posts.title}</h1>
+
+                <Link to={`/post/${this.props.posts._id}`}>
+                    <h2>{this.props.posts.title}</h2>
+                    <h3>{this.props.posts.country}</h3>
+                    <h4>{this.props.posts.city}</h4>
+                </Link>
             </div>
         )
     }

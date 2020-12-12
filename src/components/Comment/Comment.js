@@ -1,17 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-
+import axios from 'axios';
 
 class Comment extends React.Component {
     render() {
         return (
             <div>
-                <h1>Hello</h1>
+                <h1>Hello I am a comment component</h1>
             </div>
         )
     }
 }
-
 
 export default Comment;

@@ -21,7 +21,6 @@ class Profile extends React.Component {
     }
 
     render() {
-        console.log('stte', this.state)
         return (
             <div>
                 <div>

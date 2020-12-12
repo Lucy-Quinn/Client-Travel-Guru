@@ -18,6 +18,7 @@ class EditProfile extends React.Component {
 
     componentDidMount() {
         const { userId } = this.props.match.params;
+        //used an if statement to avoid error when rending editProfile page from another page that is not the Profile page
         if (this.props.location.state) {
             this.setState({
                 name: this.props.location.state.userInfo.name,
@@ -37,8 +38,6 @@ class EditProfile extends React.Component {
         // console.log('TARGEETTT', event.target)
         const { name, value } = event.target;
         this.setState({ [name]: value })
-        //                ▲  Assign value to property using "object bracket notataion"
-        //  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors
     }
 
 
@@ -52,7 +51,6 @@ class EditProfile extends React.Component {
             { name, username, nationality, myFavoriteTrip, description, image }, { withCredentials: true }
         )
             .then(() => {
-                // <Redirect to={`api/profile/${userId}`} />
                 this.props.history.push(`/profile/${userId}`);
             })
             .catch((err) => console.log(err))

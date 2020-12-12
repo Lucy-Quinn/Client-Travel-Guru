@@ -1,12 +1,16 @@
 import axios from 'axios';
 import Comment from './../../components/Comment/Comment';
+import CreateComment from './../../components/CreateComment/CreateComment';
+
 import React from 'react';
+
 
 
 class PostDetails extends React.Component {
 
     state = {
-        postDetails: ''
+        postDetails: '',
+        postAuthor: ''
     }
 
     componentDidMount() {
@@ -15,15 +19,26 @@ class PostDetails extends React.Component {
         axios
             .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, { withCredentials: true })
             .then((response) => {
-                this.setState({ postDetails: response.data })
+                this.setState({ postDetails: response.data, postAuthor: response.data.postAuthor.name })
             })
             .catch((err) => console.log(err));
     }
 
 
+    handleFavorite = () => {
+        // const { postId } = this.state
+        const { postId } = this.props.match.params;
+        axios
+            .post(`${process.env.REACT_APP_API_URI}/api/favoritePost/add/${postId}`, { withCredentials: true })
+            .then((response) => {
+                console.log('response', response.data);
+            })
+            .catch((err) => console.log(err));
+    }
+
 
     render() {
-        const { title, image, country, city, description, postAuthor, updated_at } = this.state.postDetails
+        const { title, image, country, city, description, updated_at } = this.state.postDetails
         return (
             <div>
                 <h1>{title}</h1>
@@ -32,12 +47,19 @@ class PostDetails extends React.Component {
                 <h3>{city}</h3>
                 <p>{description}</p>
                 <div>
-                    <p>{postAuthor}</p>
+                    {/* {this.state.postDetails.postAuthor.name ? <p>{this.state.postDetails.postAuthor.name}</p> : null} */}
+                    <p>{this.state.postAuthor}</p>
                     <p>{updated_at}</p>
                 </div>
-                <button>Save to Favorites</button>
+                {/* <input type="submit" value="Submit" disabled={!this.state.isReady} /> */}
+
+                {/* {console.log(this.state.postDetails)} */}
+
+                <button type="submit" onClick={this.handleFavorite}>Save to Favorites</button>
 
                 <Comment />
+                <CreateComment postDetails={this.state.postDetails} />
+
             </div>
         )
     }

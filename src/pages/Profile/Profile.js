@@ -14,7 +14,6 @@ class Profile extends React.Component {
         axios
             .get(`${process.env.REACT_APP_API_URI}/api/profile/${userId}`, { withCredentials: true })
             .then((response) => {
-                console.log('response', response.data)
                 const { name, username, nationality, email, myFavoriteTrip, description, image, _id } = response.data;
                 this.setState({ name, username, nationality, email, myFavoriteTrip, description, image, _id })
             })

@@ -1,12 +1,12 @@
 import axios from 'axios';
-// import Comment from './../../components/Comment/Comment';
+import Comment from './../../components/Comment/Comment';
 import React from 'react';
 
 
 class PostDetails extends React.Component {
 
     state = {
-
+        postDetails: ''
     }
 
     componentDidMount() {
@@ -15,8 +15,7 @@ class PostDetails extends React.Component {
         axios
             .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, { withCredentials: true })
             .then((response) => {
-                console.log('response', response.data);
-
+                this.setState({ postDetails: response.data })
             })
             .catch((err) => console.log(err));
     }
@@ -24,11 +23,21 @@ class PostDetails extends React.Component {
 
 
     render() {
-        console.log('hello', this.props);
-
+        const { title, image, country, city, description, postAuthor, updated_at } = this.state.postDetails
         return (
             <div>
-                <h1>hello</h1>
+                <h1>{title}</h1>
+                <img src={image} alt="a photo of this post" />
+                <h2>{country}</h2>
+                <h3>{city}</h3>
+                <p>{description}</p>
+                <div>
+                    <p>{postAuthor}</p>
+                    <p>{updated_at}</p>
+                </div>
+                <button>Save to Favorites</button>
+
+                <Comment />
             </div>
         )
     }

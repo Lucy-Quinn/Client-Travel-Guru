@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { withAuth } from '../../context/auth-context';
 
 
 class CreateComment extends React.Component {
@@ -51,4 +52,4 @@ class CreateComment extends React.Component {
 }
 
 
-export default CreateComment;
+export default withAuth(CreateComment);

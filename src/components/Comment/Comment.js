@@ -1,14 +1,22 @@
 import React from 'react';
 import axios from 'axios';
+import { withAuth } from '../../context/auth-context';
 
 class Comment extends React.Component {
+
     render() {
+
         return (
+
             <div>
-                <h1>Hello I am a comment component</h1>
+                <p>{this.props.postDetails.commentAuthor.username}</p>
+
+                <p>{this.props.postDetails.commentAuthor.description}</p>
+
+
             </div>
         )
     }
 }
 
-export default Comment;
+export default withAuth(Comment);

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Comment from './../../components/Comment/Comment';
 import CreateComment from './../../components/CreateComment/CreateComment';
+import { withAuth } from '../../context/auth-context';
 
 import React from 'react';
 
@@ -10,7 +11,8 @@ class PostDetails extends React.Component {
 
     state = {
         postDetails: '',
-        postAuthor: ''
+        postAuthor: '',
+        commentsArray: []
     }
 
     componentDidMount() {
@@ -19,19 +21,19 @@ class PostDetails extends React.Component {
         axios
             .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, { withCredentials: true })
             .then((response) => {
-                this.setState({ postDetails: response.data, postAuthor: response.data.postAuthor.name })
+                console.log('response', response.data);
+                this.setState({ postDetails: response.data, postAuthor: response.data.postAuthor.name, commentsArray: response.data.comments })
             })
             .catch((err) => console.log(err));
+
     }
 
 
     handleFavorite = () => {
-        // const { postId } = this.state
         const { postId } = this.props.match.params;
         axios
             .post(`${process.env.REACT_APP_API_URI}/api/favoritePost/add/${postId}`, { withCredentials: true })
-            .then((response) => {
-                console.log('response', response.data);
+            .then(() => {
             })
             .catch((err) => console.log(err));
     }
@@ -47,17 +49,15 @@ class PostDetails extends React.Component {
                 <h3>{city}</h3>
                 <p>{description}</p>
                 <div>
-                    {/* {this.state.postDetails.postAuthor.name ? <p>{this.state.postDetails.postAuthor.name}</p> : null} */}
                     <p>{this.state.postAuthor}</p>
                     <p>{updated_at}</p>
                 </div>
-                {/* <input type="submit" value="Submit" disabled={!this.state.isReady} /> */}
 
-                {/* {console.log(this.state.postDetails)} */}
 
                 <button type="submit" onClick={this.handleFavorite}>Save to Favorites</button>
-
-                <Comment />
+                {this.state.commentsArray.map((comment) => {
+                    return (<Comment postDetails={comment} />)
+                })}
                 <CreateComment postDetails={this.state.postDetails} />
 
             </div>
@@ -66,6 +66,6 @@ class PostDetails extends React.Component {
 }
 
 
-export default PostDetails;
+export default withAuth(PostDetails);
 
 

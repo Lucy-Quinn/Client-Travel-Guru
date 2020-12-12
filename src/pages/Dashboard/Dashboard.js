@@ -2,6 +2,8 @@ import React from 'react';
 import SearchBar from './../../components/SearchBar/SearchBar';
 import axios from 'axios';
 import Card from './../../components/Card/Card';
+import { withAuth } from '../../context/auth-context';
+
 
 
 class Dashboard extends React.Component {
@@ -47,4 +49,4 @@ class Dashboard extends React.Component {
     }
 }
 
-export default Dashboard; 
+export default withAuth(Dashboard);

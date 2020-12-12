@@ -17,7 +17,6 @@ class PostDetails extends React.Component {
 
     componentDidMount() {
         const { postId } = this.props.match.params;
-
         axios
             .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, { withCredentials: true })
             .then((response) => {

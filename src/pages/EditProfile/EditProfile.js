@@ -46,10 +46,11 @@ class EditProfile extends React.Component {
         const { name, username, nationality, myFavoriteTrip, description, image } = this.state;
         const { userId } = this.props.match.params;
 
-        axios.put(
-            `${process.env.REACT_APP_API_URI}/api/editProfile/${userId}`,
-            { name, username, nationality, myFavoriteTrip, description, image }, { withCredentials: true }
-        )
+        axios
+            .put(
+                `${process.env.REACT_APP_API_URI}/api/editProfile/${userId}`,
+                { name, username, nationality, myFavoriteTrip, description, image }, { withCredentials: true }
+            )
             .then(() => {
                 this.props.history.push(`/profile/${userId}`);
             })

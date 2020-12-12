@@ -13,6 +13,7 @@ import PrivateRoute from './components/PrivateRoute';
 import EditProfile from './pages/EditProfile/EditProfile';
 import Dashboard from './pages/Dashboard/Dashboard';
 import PostDetails from './pages/PostDetails/PostDetails';
+import MyPosts from './pages/MyPosts/MyPosts';
 
 
 
@@ -36,6 +37,7 @@ class App extends Component {
           <PrivateRoute exact path="/editProfile/:userId" component={EditProfile} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/postDetails/:postId" component={PostDetails} />
+          <PrivateRoute exact path="/myPosts/:userId" component={MyPosts} />
 
         </Switch>
       </div>

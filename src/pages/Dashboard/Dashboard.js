@@ -38,11 +38,11 @@ class Dashboard extends React.Component {
                 <SearchBar postSearch={this.state.postArray} filteredPostsSearch={this.filteredPost} />
                 {this.state.searchCountry[0] ? //if there is at least one position in the array
                     (this.state.searchCountry.map((post) => {
-                        return <Card posts={post} />
+                        return <Card post={post} />
                     }))
 
                     : (this.state.postArray.map((post) => {
-                        return <Card posts={post} />
+                        return <Card post={post} />
                     }))}
             </div>
         )

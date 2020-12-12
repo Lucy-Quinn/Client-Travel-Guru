@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { withAuth } from '../../context/auth-context';
+import { Route, Redirect } from 'react-router-dom';
 
 
 class CreateComment extends React.Component {
 
     state = {
-        description: undefined
+        description: undefined,
+        isRender: false
     }
 
     handleChange = (event) => {
@@ -20,16 +22,19 @@ class CreateComment extends React.Component {
         event.preventDefault();
         const { description } = this.state;
         const postId = this.props.postDetails._id;
-
         axios
             .post(
                 `${process.env.REACT_APP_API_URI}/api/createComment/${postId}`,
                 { description }, { withCredentials: true }
             )
-            .then((response) => {
-                console.log('response', response.data);
+            .then(() => {
+
             })
             .catch((err) => console.log(err))
+
+
+        this.setState({ isRender: true })
+
     }
 
 
@@ -44,7 +49,7 @@ class CreateComment extends React.Component {
                         onChange={this.handleChange}
                     />
 
-                    <input type="submit" value="Submit" />
+                    <button type="submit" value="Submit" >Send</button>
                 </form>
             </div>
         )

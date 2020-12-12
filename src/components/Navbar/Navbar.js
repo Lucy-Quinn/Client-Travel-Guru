@@ -19,10 +19,10 @@ class Navbar extends Component {
             <Link to={`/profile/${this.props.user._id}`}>
               Profile
             </Link>
-            <Link to={`/createPost}`}>
+            <Link to={`/createPost`}>
               Create Post
             </Link>
-            <Link to={`/myPosts/${this.props.user._id}}`}>
+            <Link to={`/myPosts/${this.props.user._id}`}>
               My Posts
             </Link>
             <Link to={`/favoritePosts/${this.props.user._id}`}>

@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import Card from "./../../components/Card/Card";
 import { withAuth } from "../../context/auth-context";
+import { Link } from "react-router-dom";
 
 class MyPosts extends React.Component {
   state = {
@@ -29,13 +30,22 @@ class MyPosts extends React.Component {
   }
 
   render() {
+    console.log("postArr", this.state.postsArr);
     return (
       <div>
         {this.state.postsArr
           ? this.state.postsArr.map((post) => {
-              return <Card post={post} />;
+              return (
+                <div>
+                  <Card post={post} />
+                  <Link exact to={`/editPost/${post._id}`}>
+                    <button>Edit Post</button>
+                  </Link>
+                </div>
+              );
             })
           : null}
+        <div></div>
       </div>
     );
   }

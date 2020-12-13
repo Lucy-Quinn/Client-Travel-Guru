@@ -27,7 +27,7 @@ class CreatePost extends React.Component {
     event.preventDefault();
     const { title, country, city, description, image } = this.state;
     const { userId } = this.props.match.params;
-    console.log("userId", userId);
+    // console.log("userId", userId);
 
     axios
       .post(

@@ -28,7 +28,7 @@ class App extends Component {
         <Navbar />
 
         <Switch>
-          <Route exact path="/" component={LandingPage} />
+          <AnonRoute exact path="/" component={LandingPage} />
 
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
@@ -55,10 +55,16 @@ class App extends Component {
             path="/createTravelLog"
             component={CreateTravelLog}
           />
-          <PrivateRoute exact path="/deleteProfileConfirmation/:userId" component={DeleteProfileConfirmation} />
-          <PrivateRoute exact path="/favoritePosts/:userId" component={MyFavorites} />
-
-
+          <PrivateRoute
+            exact
+            path="/deleteProfileConfirmation/:userId"
+            component={DeleteProfileConfirmation}
+          />
+          <PrivateRoute
+            exact
+            path="/favoritePosts/:userId"
+            component={MyFavorites}
+          />
         </Switch>
       </div>
     );

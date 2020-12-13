@@ -33,6 +33,12 @@ class TravelLog extends React.Component {
     // console.log("postArr", this.state.postsArr);
     return (
       <div>
+        <h1>My Travel Log</h1>
+        <div>
+          <Link exact to={`/createTravelLog`}>
+            <button>Create Travel Log</button>
+          </Link>
+        </div>
         {this.state.travelLogsArr
           ? this.state.travelLogsArr.map((travelLog) => {
               return (
@@ -42,11 +48,6 @@ class TravelLog extends React.Component {
               );
             })
           : null}
-        <div>
-          <Link exact to={`/createTravelLog`}>
-            <button>Create Travel Log</button>
-          </Link>
-        </div>
       </div>
     );
   }

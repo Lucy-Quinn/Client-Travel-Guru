@@ -17,6 +17,7 @@ import MyPosts from "./pages/MyPosts/MyPosts";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import EditPost from "./pages/EditPost/EditPost";
 import TravelLog from "./pages/TravelLog/TravelLog";
+import CreateTravelLog from "./pages/CreateTravelLog/CreateTravelLog";
 
 class App extends Component {
   render() {
@@ -47,11 +48,11 @@ class App extends Component {
           <PrivateRoute exact path="/createPost" component={CreatePost} />
           <PrivateRoute exact path="/editPost/:postId" component={EditPost} />
           <PrivateRoute exact path="/travelLogs" component={TravelLog} />
-          {/* <PrivateRoute
+          <PrivateRoute
             exact
             path="/createTravelLog"
-            component={EditTravelLog}
-          /> */}
+            component={CreateTravelLog}
+          />
         </Switch>
       </div>
     );

@@ -27,7 +27,7 @@ class CreatePost extends React.Component {
     event.preventDefault();
     const { title, country, city, description, image } = this.state;
     const { userId } = this.props.match.params;
-    // console.log("userId", userId);
+    console.log("userId", this.props);
 
     axios
       .post(
@@ -36,7 +36,7 @@ class CreatePost extends React.Component {
         { withCredentials: true }
       )
       .then(() => {
-        this.props.history.push(`/dashboard`);
+        this.props.history.push(`/myPosts/${this.props.user._id}`);
       })
       .catch((err) => console.log(err));
   };

@@ -15,20 +15,20 @@ class EditPost extends React.Component {
   };
 
   componentDidMount() {
-    const { userId } = this.props.match.params;
+    const { postId } = this.props.match.params;
+    console.log("props", this.props);
     //used an if statement to avoid error when rending editProfile page from another page that is not the Profile page
-    if (this.props.location.state) {
-      this.setState({
-        name: this.props.location.state.userInfo.name,
-        username: this.props.location.state.userInfo.username,
-        nationality: this.props.location.state.userInfo.nationality,
-        myFavoriteTrip: this.props.location.state.userInfo.myFavoriteTrip,
-        description: this.props.location.state.userInfo.description,
-        image: this.props.location.state.userInfo.image,
-      });
-    } else {
-      this.props.history.push(`/profile/${userId}`);
-    }
+    // if (this.props.location.state) {
+    //   this.setState({
+    //     title: this.props.location.state.userInfo.name,
+    //     country: this.props.location.state.userInfo.username,
+    //     city: this.props.location.state.userInfo.nationality,
+    //     description: this.props.location.state.userInfo.description,
+    //     image: this.props.location.state.userInfo.image,
+    //   });
+    // } else {
+    //   this.props.history.push(`/profile/${userId}`);
+    // }
   }
 
   handleChange = (event) => {
@@ -39,24 +39,19 @@ class EditPost extends React.Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const {
-      name,
-      username,
-      nationality,
-      myFavoriteTrip,
-      description,
-      image,
-    } = this.state;
-    const { userId } = this.props.match.params;
+    const { title, country, city, description, image } = this.state;
+    const { postId } = this.props.match.params;
+    console.log("postId in handle submit", postId);
 
     axios
       .put(
-        `${process.env.REACT_APP_API_URI}/api/editProfile/${userId}`,
-        { name, username, nationality, myFavoriteTrip, description, image },
+        `${process.env.REACT_APP_API_URI}/api/editPost/${postId}`,
+        { title, country, city, description, image },
         { withCredentials: true }
       )
       .then(() => {
-        this.props.history.push(`/profile/${userId}`);
+        console.log("postid in then put axion call", postId);
+        this.props.history.push(`/myPosts/${this.props.user._id}`);
       })
       .catch((err) => console.log(err));
   };
@@ -89,40 +84,31 @@ class EditPost extends React.Component {
     return (
       <div>
         <div>
-          <img src={this.state.image} alt="User profile" />
-          <h2>{this.state.name}</h2>
+          <h2>Edit Post</h2>
         </div>
         <div>
           <form onSubmit={this.handleFormSubmit}>
-            <label>Name:</label>
+            <label>Title:</label>
             <input
               type="text"
-              name="name"
-              value={this.state.name}
+              name="title"
+              value={this.state.title}
               onChange={this.handleChange}
             />
 
-            <label>Username:</label>
+            <label>Country:</label>
             <input
               type="text"
-              name="username"
-              value={this.state.username}
+              name="country"
+              value={this.state.country}
               onChange={this.handleChange}
             />
 
-            <label>Nationality:</label>
+            <label>City:</label>
             <input
               type="text"
-              name="nationality"
-              value={this.state.nationality}
-              onChange={this.handleChange}
-            />
-
-            <label>Favorite Trip:</label>
-            <input
-              type="text"
-              name="myFavoriteTrip"
-              value={this.state.myFavoriteTrip}
+              name="city"
+              value={this.state.city}
               onChange={this.handleChange}
             />
 

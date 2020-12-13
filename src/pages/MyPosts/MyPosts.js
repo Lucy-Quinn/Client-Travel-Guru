@@ -30,7 +30,7 @@ class MyPosts extends React.Component {
   }
 
   render() {
-    console.log("postArr", this.state.postsArr);
+    // console.log("postArr", this.state.postsArr);
     return (
       <div>
         {this.state.postsArr
@@ -38,7 +38,7 @@ class MyPosts extends React.Component {
               return (
                 <div>
                   <Card post={post} />
-                  <Link exact to={`/editPost/${post._id}`}>
+                  <Link exact to={`/editPost/${post._id}`} post={post}>
                     <button>Edit Post</button>
                   </Link>
                 </div>

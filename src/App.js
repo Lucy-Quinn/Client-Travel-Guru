@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import PostDetails from "./pages/PostDetails/PostDetails";
 import MyPosts from "./pages/MyPosts/MyPosts";
 import CreatePost from "./pages/CreatePost/CreatePost";
+import EditPost from "./pages/EditPost/EditPost";
 
 class App extends Component {
   render() {
@@ -43,6 +44,7 @@ class App extends Component {
           />
           <PrivateRoute exact path="/myPosts/:userId" component={MyPosts} />
           <PrivateRoute exact path="/createPost" component={CreatePost} />
+          <PrivateRoute exact path="/editPost/:postId" component={EditPost} />
         </Switch>
       </div>
     );

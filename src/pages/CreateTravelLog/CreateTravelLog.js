@@ -77,8 +77,11 @@ class CreateTravelLog extends React.Component {
               onChange={this.handleChange}
             />
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Save" />
           </form>
+          <Link exact to={`/travelLogs`}>
+            <button>Go back to your Travel Logs</button>
+          </Link>
         </div>
       </div>
     );

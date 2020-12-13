@@ -1,9 +1,27 @@
+import Axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { withAuth } from "../../context/auth-context";
 
 class TravelLogCard extends React.Component {
+  deleteHandler = () => {
+    const travelLogId = this.props.travelLog._id;
+
+    axios
+      .delete(
+        `${process.env.REACT_APP_API_URI}/api/deleteTravelLog/${travelLogId}`,
+        {
+          withCredentials: true,
+        }
+      )
+      .then((response) => {
+        console.log("reponse", response);
+      })
+      .catch((err) => console.log(err));
+  };
+
   render() {
-    console.log("propssss", this.props);
     return (
       <div>
         <h2>{this.props.travelLog.title}</h2>
@@ -11,9 +29,11 @@ class TravelLogCard extends React.Component {
         <h3>{this.props.travelLog.country}</h3>
         <h4>{this.props.travelLog.city}</h4>
         <p>{this.props.travelLog.description}</p>
+
+        <button onClick={this.deleteHandler}>Delete</button>
       </div>
     );
   }
 }
 
-export default TravelLogCard;
+export default withAuth(TravelLogCard);

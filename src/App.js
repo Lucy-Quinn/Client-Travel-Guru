@@ -19,6 +19,7 @@ import EditPost from "./pages/EditPost/EditPost";
 import TravelLog from "./pages/TravelLog/TravelLog";
 import CreateTravelLog from "./pages/CreateTravelLog/CreateTravelLog";
 import DeleteProfileConfirmation from "./pages/DeleteProfileConfirmation/DeleteProfileConfirmation";
+import MyFavorites from "./pages/MyFavorites/MyFavorites";
 
 class App extends Component {
   render() {
@@ -55,6 +56,7 @@ class App extends Component {
             component={CreateTravelLog}
           />
           <PrivateRoute exact path="/deleteProfileConfirmation/:userId" component={DeleteProfileConfirmation} />
+          <PrivateRoute exact path="/favoritePosts/:userId" component={MyFavorites} />
 
 
         </Switch>

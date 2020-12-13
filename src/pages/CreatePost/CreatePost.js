@@ -79,6 +79,7 @@ class CreatePost extends React.Component {
               name="title"
               value={this.state.title}
               onChange={this.handleChange}
+              required
             />
 
             <label>Country:</label>
@@ -87,6 +88,7 @@ class CreatePost extends React.Component {
               name="country"
               value={this.state.country}
               onChange={this.handleChange}
+              required
             />
 
             <label>City:</label>
@@ -95,6 +97,7 @@ class CreatePost extends React.Component {
               name="city"
               value={this.state.city}
               onChange={this.handleChange}
+              required
             />
 
             <label>Description:</label>
@@ -102,6 +105,7 @@ class CreatePost extends React.Component {
               name="description"
               value={this.state.description}
               onChange={this.handleChange}
+              required
             />
 
             <label>Image</label>
@@ -109,6 +113,7 @@ class CreatePost extends React.Component {
               name="image"
               type="file"
               onChange={this.handleFileUpload}
+              required
             ></input>
             <span>
               <img

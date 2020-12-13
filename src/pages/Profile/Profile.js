@@ -41,13 +41,13 @@ class Profile extends React.Component {
                     <p>description {this.state.description}</p>
                 </div>
                 <div>
-                    <Link exact to={`/favoritePost/${this.state._id}`}>
+                    <Link exact to={`/favoritePosts/${this.state._id}`}>
                         <button>Favorite Posts</button>
                     </Link>
                     <Link exact to='/createPost'>
                         <button>Create a Post</button>
                     </Link>
-                    <Link exact to={`/travelLog/${this.state._id}`}>
+                    <Link exact to={`/travelLogs`}>
                         <button>Travel Log</button>
                     </Link>
                 </div>

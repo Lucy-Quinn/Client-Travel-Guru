@@ -18,7 +18,7 @@ class DeleteProfileConfirmation extends React.Component {
             )
             .then((response) => {
                 console.log("reponse", response);
-                this.props.history.push(`/`);
+                this.props.logout();
 
             })
             .catch((err) => console.log(err));

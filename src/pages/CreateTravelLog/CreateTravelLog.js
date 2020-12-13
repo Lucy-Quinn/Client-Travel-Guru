@@ -52,6 +52,7 @@ class CreateTravelLog extends React.Component {
               name="title"
               value={this.state.title}
               onChange={this.handleChange}
+              required
             />
 
             <label>Country:</label>
@@ -60,6 +61,7 @@ class CreateTravelLog extends React.Component {
               name="country"
               value={this.state.country}
               onChange={this.handleChange}
+              required
             />
 
             <label>City:</label>
@@ -68,6 +70,7 @@ class CreateTravelLog extends React.Component {
               name="city"
               value={this.state.city}
               onChange={this.handleChange}
+              required
             />
 
             <label>Description:</label>
@@ -75,6 +78,7 @@ class CreateTravelLog extends React.Component {
               name="description"
               value={this.state.description}
               onChange={this.handleChange}
+              required
             />
 
             <input type="submit" value="Save" />

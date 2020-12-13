@@ -85,6 +85,8 @@ class EditProfile extends React.Component {
 
 
     render() {
+
+        console.log('object', this.props.location.state);
         return (
 
             <div>
@@ -145,7 +147,12 @@ class EditProfile extends React.Component {
                     </form>
 
                 </div>
-
+                {this.props.location.state.userInfo ?
+                    <div>
+                        <Link to={`/deleteProfileConfirmation/${this.props.location.state.userInfo._id}`}>Delete Account</Link>
+                    </div>
+                    : null
+                }
             </div>
         )
     }

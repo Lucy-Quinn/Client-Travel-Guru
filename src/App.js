@@ -18,6 +18,7 @@ import CreatePost from "./pages/CreatePost/CreatePost";
 import EditPost from "./pages/EditPost/EditPost";
 import TravelLog from "./pages/TravelLog/TravelLog";
 import CreateTravelLog from "./pages/CreateTravelLog/CreateTravelLog";
+import DeleteProfileConfirmation from "./pages/DeleteProfileConfirmation/DeleteProfileConfirmation";
 
 class App extends Component {
   render() {
@@ -53,6 +54,9 @@ class App extends Component {
             path="/createTravelLog"
             component={CreateTravelLog}
           />
+          <PrivateRoute exact path="/deleteProfileConfirmation/:userId" component={DeleteProfileConfirmation} />
+
+
         </Switch>
       </div>
     );

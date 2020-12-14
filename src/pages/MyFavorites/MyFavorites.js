@@ -6,13 +6,18 @@ import { Link } from "react-router-dom";
 
 class MyFavorites extends React.Component {
   state = {
+    favoritesArr: []
   };
 
   componentDidMount() {
-    const userId = this.props.user._id;
-    console.log("props", this.props);
+    this.getFavorites();
 
-    this.setState({ userId });
+  }
+
+
+  getFavorites=()=>{
+    const userId = this.props.user._id;
+    
 
     axios
       .get(`${process.env.REACT_APP_API_URI}/api/favoritePosts/${userId}`, {
@@ -27,14 +32,13 @@ class MyFavorites extends React.Component {
   }
 
   deleteHandler = (postId) => {
-    const userId = this.props.user._id;
-
     axios
       .delete(`${process.env.REACT_APP_API_URI}/api/deleteFavorite/${postId}`, {
         withCredentials: true,
       })
       .then((response) => {
         console.log("reponse", response);
+        this.getFavorites();
       })
       .catch((err) => console.log(err));
   };

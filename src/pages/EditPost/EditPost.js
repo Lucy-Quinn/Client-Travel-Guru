@@ -15,23 +15,23 @@ class EditPost extends React.Component {
   };
 
   componentDidMount() {
-    // const { postId } = this.props.match.params;
-    // const { post } = this.props.location.state
+    const { postId } = this.props.match.params;
 
-    console.log("props", this.props);
-    //used an if statement to avoid error when rending editProfile page from another page that is not the Profile page
-    // if (this.props.post) {
-    //   const { title, country, city, description, image } = this.props.post
-    //   this.setState({
-    //     title,
-    //     country,
-    //     city,
-    //     description,
-    //     image
-    //   });
-    // } else {
-    //   this.props.history.push(`/myPosts`);
-    // }
+    axios
+      .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        const { title, country, city, description, image } = response.data;
+        this.setState({
+          title,
+          country,
+          city,
+          description,
+          image,
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   handleChange = (event) => {
@@ -43,7 +43,6 @@ class EditPost extends React.Component {
     event.preventDefault();
     const { title, country, city, description, image } = this.state;
     const { postId } = this.props.match.params;
-    console.log("postId in handle submit", postId);
 
     axios
       .put(
@@ -52,7 +51,6 @@ class EditPost extends React.Component {
         { withCredentials: true }
       )
       .then(() => {
-        console.log("postid in then put axion call", postId);
         this.props.history.push(`/myPosts/${this.props.user._id}`);
       })
       .catch((err) => console.log(err));

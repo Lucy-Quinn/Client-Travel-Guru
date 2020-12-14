@@ -15,40 +15,19 @@ class CreateComment extends React.Component {
     this.setState({ [name]: value });
   };
 
-  handleFormSubmit = (event) => {
-    console.log('object', this.props);
-    event.preventDefault();
-    const { description } = this.state;
-    const postId = this.props.postDetails._id;
-    axios
-      .post(
-        `${process.env.REACT_APP_API_URI}/api/createComment/${postId}`,
-        { description },
-        { withCredentials: true }
-      )
-      .then((response) => {
-        console.log('response', response);
-      })
-      .catch((err) => console.log(err));
-
-    // this.setState({ isRender: true });
-    // this.props.history.push(`/postDetails/${postId}`)
-
-  };
-
-
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleFormSubmit}>
+        <form
+          onSubmit={() => this.props.handleFormSubmit(this.state.description)}>
           <textarea
             name="description"
             value={this.state.description}
             onChange={this.handleChange}
           />
 
-          <button type="submit" value="Submit">
+          <button type="submit">
             Send
           </button>
         </form>

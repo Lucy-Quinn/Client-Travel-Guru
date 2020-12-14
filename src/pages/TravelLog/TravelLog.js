@@ -6,13 +6,17 @@ import { Link } from "react-router-dom";
 
 class TravelLog extends React.Component {
   state = {
+    travelLogsArr: []
   };
 
   componentDidMount() {
-    const { userId } = this.props.match.params;
 
-    this.setState({ userId });
+    this.getTravelLogs();
 
+
+  }
+
+  getTravelLogs = () => {
     axios
       .get(`${process.env.REACT_APP_API_URI}/api/travelLogs`, {
         withCredentials: true,
@@ -24,6 +28,22 @@ class TravelLog extends React.Component {
       })
       .catch((err) => console.log(err));
   }
+
+  deleteHandler = (travelLogId) => {
+
+    axios
+      .delete(
+        `${process.env.REACT_APP_API_URI}/api/deleteTravelLog/${travelLogId}`,
+        {
+          withCredentials: true,
+        }
+      )
+      .then((response) => {
+        console.log("reponse", response);
+        this.getTravelLogs();
+      })
+      .catch((err) => console.log(err));
+  };
 
   render() {
     return (
@@ -38,7 +58,7 @@ class TravelLog extends React.Component {
           ? this.state.travelLogsArr.map((travelLog) => {
             return (
               <div>
-                <TravelLogCard travelLog={travelLog} />
+                <TravelLogCard travelLog={travelLog} deleteHandler={this.deleteHandler} />
               </div>
             );
           })

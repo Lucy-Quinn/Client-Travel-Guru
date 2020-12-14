@@ -5,21 +5,7 @@ import axios from "axios";
 import { withAuth } from "../../context/auth-context";
 
 class TravelLogCard extends React.Component {
-  deleteHandler = () => {
-    const travelLogId = this.props.travelLog._id;
 
-    axios
-      .delete(
-        `${process.env.REACT_APP_API_URI}/api/deleteTravelLog/${travelLogId}`,
-        {
-          withCredentials: true,
-        }
-      )
-      .then((response) => {
-        console.log("reponse", response);
-      })
-      .catch((err) => console.log(err));
-  };
 
   render() {
     return (
@@ -30,7 +16,7 @@ class TravelLogCard extends React.Component {
         <h4>{this.props.travelLog.city}</h4>
         <p>{this.props.travelLog.description}</p>
 
-        <button onClick={this.deleteHandler}>Delete</button>
+        <button onClick={() => this.props.deleteHandler(this.props.travelLog._id)}>Delete</button>
       </div>
     );
   }

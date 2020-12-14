@@ -9,11 +9,14 @@ class PostDetails extends React.Component {
   state = {
     postDetails: "",
     postAuthor: "",
-    commentsArray: [],
-    // newState:''
+    commentsArray: []
   };
 
   componentDidMount() {
+    this.getPost();
+  }
+
+  getPost = () => {
     const { postId } = this.props.match.params;
     axios
       .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, {
@@ -48,34 +51,26 @@ class PostDetails extends React.Component {
       .catch((err) => console.log(err));
   };
 
-  // updateState = (newState) => {
-  //   //seting the new state with the passed params
-  //   // Create a new array based on current state:
-  //   // let comments = [...this.state.commentsArray];
 
-  //   // Add item to it
-  //   // comments.push({ value: newState });
 
-  //   // Set state
-  //   this.setState({ commentsArray: newState });
-  // }
-  // updateState() {
-  //   const { postId } = this.props.match.params;
+  handleFormSubmit = (description) => {
 
-  //   axios
-  //     .get(
-  //       `${process.env.REACT_APP_API_URI}/api/comment/${postId}`,
-  //       { withCredentials: true }
-  //     )
-  //     .then((response) => {
-  //       const newState = response.data
-  //       console.log('reponse', response.data);
-  //       this.setState({ commentsArray: newState })
-  //     })
-  //     .catch((err) => console.log(err));
-  //   // const state = this.state.description;
-  //   // this.updateState(state)
-  // }
+    const { postId } = this.props.match.params;
+
+    axios
+      .post(
+        `${process.env.REACT_APP_API_URI}/api/createComment/${postId}`,
+        { description },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        console.log('response', response);
+        this.getPost();
+      })
+      .catch((err) => console.log(err));
+
+
+  };
 
   render() {
     const {
@@ -102,11 +97,9 @@ class PostDetails extends React.Component {
         <button type="submit" onClick={this.handleFavorite}>
           Save to Favorites
         </button>
-        {this.state.commentsArray.map((comment) => {
+        {this.state.commentsArray.map((comment) => <Comment postDetails={comment} />)}
 
-          return <Comment postDetails={comment} />;
-        })}
-        <CreateComment postDetails={this.state.postDetails} />
+        <CreateComment handleFormSubmit={this.handleFormSubmit} />
       </div>
     );
   }

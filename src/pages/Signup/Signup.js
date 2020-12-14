@@ -14,17 +14,12 @@ class Signup extends Component {
     imageReady: false
   };
 
-
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
-
-
-
   handleFormSubmit = event => {
-    // console.log('email handleformsubmit from signup', this.state)
     event.preventDefault();
     const { name, username, email, password, image } = this.state;
     if (image) {
@@ -33,7 +28,6 @@ class Signup extends Component {
       this.props.signup(name, username, email, password);
     }
   };
-
 
   handleFileUpload = (e) => {
     console.log("The file to be uploaded is: ", e.target.files);
@@ -90,10 +84,4 @@ class Signup extends Component {
   }
 }
 
-
-
 export default withAuth(Signup);
-
-
-// const EnhancedSignup = withAuth(Signup)
-// export default EnhancedSignup;

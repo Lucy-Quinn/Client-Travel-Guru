@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 class MyFavorites extends React.Component {
   state = {
-    // userId: this.props.match.params.userId
   };
 
   componentDidMount() {
@@ -41,7 +40,6 @@ class MyFavorites extends React.Component {
   };
 
   render() {
-    // console.log("postArr", this.state.postsArr);
     return (
       <div>
         {this.state.favoritesArr && this.state.favoritesArr.length > 0 ? (
@@ -56,7 +54,7 @@ class MyFavorites extends React.Component {
             );
           })
         ) : (
-          <h3>You don't have any favorites 💔</h3>
+          <p>You don't have any favorites 💔 You can add more favorites by searching for travel posts <Link exact to={`/dashboard`}>here</Link></p>
         )}
         <div></div>
       </div>

@@ -54,15 +54,6 @@ class Profile extends React.Component {
             </div>
         )
     }
-
-    // componentDidMount() {
-    //     axios
-    //         .get(`${process.env.REACT_APP_API_URI}/${this.props.user._id}`)
-    //         .then((response) => {
-    //             console.log("response", response.data);
-    //         })
-    //         .catch((err) => console.log(err));
-    // }
 }
 
 

@@ -33,19 +33,16 @@ class EditProfile extends React.Component {
         }
     }
 
-
     handleChange = (event) => {
         // console.log('TARGEETTT', event.target)
         const { name, value } = event.target;
         this.setState({ [name]: value })
     }
 
-
     handleFormSubmit = (event) => {
         event.preventDefault();
         const { name, username, nationality, myFavoriteTrip, description, image } = this.state;
         const { userId } = this.props.match.params;
-
         axios
             .put(
                 `${process.env.REACT_APP_API_URI}/api/editProfile/${userId}`,
@@ -56,9 +53,6 @@ class EditProfile extends React.Component {
             })
             .catch((err) => console.log(err))
     }
-
-
-
 
     handleFileUpload = (e) => {
         console.log("The file to be uploaded is: ", e.target.files);
@@ -88,7 +82,6 @@ class EditProfile extends React.Component {
 
         console.log('object', this.props.location.state);
         return (
-
             <div>
                 <div>
                     <img src={this.state.image} alt='User profile' />
@@ -145,7 +138,6 @@ class EditProfile extends React.Component {
 
                         <input type="submit" value="Submit" disabled={!this.state.isReady} />
                     </form>
-
                 </div>
                 {this.props.location.state.userInfo ?
                     <div>
@@ -156,7 +148,6 @@ class EditProfile extends React.Component {
             </div>
         )
     }
-
 }
 
 export default withAuth(EditProfile);

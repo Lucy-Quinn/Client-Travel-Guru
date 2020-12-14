@@ -16,6 +16,7 @@ class CreateComment extends React.Component {
   };
 
   handleFormSubmit = (event) => {
+    console.log('object', this.props);
     event.preventDefault();
     const { description } = this.state;
     const postId = this.props.postDetails._id;
@@ -25,11 +26,17 @@ class CreateComment extends React.Component {
         { description },
         { withCredentials: true }
       )
-      .then(() => {})
+      .then((response) => {
+        console.log('response', response);
+      })
       .catch((err) => console.log(err));
 
-    this.setState({ isRender: true });
+    // this.setState({ isRender: true });
+    // this.props.history.push(`/postDetails/${postId}`)
+
   };
+
+
 
   render() {
     return (

@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 class MyPosts extends React.Component {
   state = {
-    // userId: this.props.match.params.userId
   };
 
   componentDidMount() {
@@ -24,26 +23,35 @@ class MyPosts extends React.Component {
         this.setState({ postsArr });
       })
       .catch((err) => console.log(err));
-    // } else {
-    //     this.props.history.push(`/dashboard`);
-    // }
+
   }
 
   render() {
-    // console.log("postArr", this.state.postsArr);
     return (
       <div>
         {this.state.postsArr
           ? this.state.postsArr.map((post) => {
-              return (
-                <div>
-                  <Card post={post} />
-                  <Link exact to={`/editPost/${post._id}`} post={post}>
-                    <button>Edit Post</button>
-                  </Link>
-                </div>
-              );
-            })
+            return (
+              <div>
+                <Card post={post} />
+
+                {/* <Link to={{ pathname: `/editPost/${post._id}`, query: { post } }} >
+                  <button>Edit Post</button>
+                </Link> */}
+
+
+                {/* <Link to={{
+  pathname: '/tylermcginnis',
+  state: {
+    fromNotifications: true
+  }
+}}>Tyler McGinnis</Link> */}
+                <Link exact to={{ pathname: `/editPost/${post._id}`, state: { post } }}>
+                  <button>Edit Post</button>
+                </Link>
+              </div>
+            );
+          })
           : null}
         <div></div>
       </div>

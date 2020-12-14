@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 class TravelLog extends React.Component {
   state = {
-    // userId: this.props.match.params.userId
   };
 
   componentDidMount() {
@@ -24,13 +23,9 @@ class TravelLog extends React.Component {
         this.setState({ travelLogsArr });
       })
       .catch((err) => console.log(err));
-    // } else {
-    //     this.props.history.push(`/dashboard`);
-    // }
   }
 
   render() {
-    // console.log("postArr", this.state.postsArr);
     return (
       <div>
         <h1>My Travel Log</h1>
@@ -41,12 +36,12 @@ class TravelLog extends React.Component {
         </div>
         {this.state.travelLogsArr
           ? this.state.travelLogsArr.map((travelLog) => {
-              return (
-                <div>
-                  <TravelLogCard travelLog={travelLog} />
-                </div>
-              );
-            })
+            return (
+              <div>
+                <TravelLogCard travelLog={travelLog} />
+              </div>
+            );
+          })
           : null}
       </div>
     );

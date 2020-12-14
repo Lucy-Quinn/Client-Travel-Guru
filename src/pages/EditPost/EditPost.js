@@ -15,24 +15,26 @@ class EditPost extends React.Component {
   };
 
   componentDidMount() {
-    const { postId } = this.props.match.params;
+    // const { postId } = this.props.match.params;
+    // const { post } = this.props.location.state
+
     console.log("props", this.props);
     //used an if statement to avoid error when rending editProfile page from another page that is not the Profile page
-    // if (this.props.location.state) {
+    // if (this.props.post) {
+    //   const { title, country, city, description, image } = this.props.post
     //   this.setState({
-    //     title: this.props.location.state.userInfo.name,
-    //     country: this.props.location.state.userInfo.username,
-    //     city: this.props.location.state.userInfo.nationality,
-    //     description: this.props.location.state.userInfo.description,
-    //     image: this.props.location.state.userInfo.image,
+    //     title,
+    //     country,
+    //     city,
+    //     description,
+    //     image
     //   });
     // } else {
-    //   this.props.history.push(`/profile/${userId}`);
+    //   this.props.history.push(`/myPosts`);
     // }
   }
 
   handleChange = (event) => {
-    // console.log('TARGEETTT', event.target)
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };

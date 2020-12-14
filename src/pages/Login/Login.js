@@ -8,7 +8,6 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
-    // Call funciton coming from AuthProvider ( via withAuth )
     this.props.login(username, password);
   };
 

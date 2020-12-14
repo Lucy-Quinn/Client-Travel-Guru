@@ -47,6 +47,7 @@ class PostDetails extends React.Component {
       )
       .then((response) => {
         console.log('response comment', response);
+        this.props.history.push(`/favoritePosts/${this.props.user._id}`)
       })
       .catch((err) => console.log(err));
   };

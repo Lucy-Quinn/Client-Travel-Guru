@@ -11,7 +11,7 @@ class EditPost extends React.Component {
     city: undefined,
     description: undefined,
     image: undefined,
-    isReady: false,
+    isReady: true,
   };
 
   componentDidMount() {
@@ -65,19 +65,22 @@ class EditPost extends React.Component {
     // req.body to .create() method when creating a new project in '/api/projects' POST route
     uploadData.append("image", file);
 
-    axios
-      .post(`${process.env.REACT_APP_API_URI}/api/upload`, uploadData, {
-        withCredentials: true,
-      })
-      .then((response) => {
-        console.log("response is: ", response);
-        // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-        // this.setState({ image: response.data.secure_url });
-        this.setState({ image: response.data.secure_url, isReady: true });
-      })
-      .catch((err) => {
-        console.log("Error while uploading the file: ", err);
-      });
+    this.setState({ isReady: false }, () => {
+
+      axios
+        .post(`${process.env.REACT_APP_API_URI}/api/upload`, uploadData, {
+          withCredentials: true,
+        })
+        .then((response) => {
+          console.log("response is: ", response);
+          // after the console.log we can see that response carries 'secure_url' which we can use to update the state
+          // this.setState({ image: response.data.secure_url });
+          this.setState({ image: response.data.secure_url, isReady: true });
+        })
+        .catch((err) => {
+          console.log("Error while uploading the file: ", err);
+        });
+    })
   };
 
   deleteHandler = () => {

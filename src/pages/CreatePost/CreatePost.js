@@ -1,8 +1,6 @@
 import axios from "axios";
 import React from "react";
 import { withAuth } from "../../context/auth-context";
-import { Link } from "react-router-dom";
-import { Route, Redirect } from "react-router-dom";
 
 class CreatePost extends React.Component {
   state = {
@@ -13,10 +11,6 @@ class CreatePost extends React.Component {
     image: undefined,
     isReady: false,
   };
-
-  //   componentDidMount() {
-  //     // const { postId } = this.props.match.params;
-  //   }
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -31,7 +25,7 @@ class CreatePost extends React.Component {
 
     axios
       .post(
-        `${process.env.REACT_APP_API_URI}/api/createPost`,
+        `${process.env.REACT_APP_API_URL}/api/createPost`,
         { title, country, city, description, image },
         { withCredentials: true }
       )
@@ -51,9 +45,8 @@ class CreatePost extends React.Component {
     uploadData.append("image", file);
 
     axios
-      .post(`${process.env.REACT_APP_API_URI}/api/upload`, uploadData, {
-        withCredentials: true,
-      })
+      .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData,
+        { withCredentials: true })
       .then((response) => {
         console.log("response is: ", response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state

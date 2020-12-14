@@ -10,12 +10,13 @@ class Dashboard extends React.Component {
 
     state = {
         postArray: [],
-        searchCountry: []
+        search: [],
+        // searchCity: []
     }
 
     componentDidMount() {
         axios
-            .get(`${process.env.REACT_APP_API_URI}/api/dashboard`, { withCredentials: true })
+            .get(`${process.env.REACT_APP_API_URL}/api/dashboard`, { withCredentials: true })
             .then((response) => {
                 // console.log('response', response.data);
 
@@ -26,18 +27,22 @@ class Dashboard extends React.Component {
 
     filteredPost = (postSearchInput) => {
         const postArray = [...this.state.postArray];
-        const foundPost = postArray.filter((post) => {
-            return post.country === postSearchInput
+        const foundInput = postArray.filter((post) => {
+            return post.country === postSearchInput || post.city === postSearchInput
         });
-        this.setState({ searchCountry: foundPost });
+        // const foundCity = postArray.filter((post) => {
+        //     return post.city === postSearchInput
+        // });
+        this.setState({ search: foundInput });
+
     }
 
     render() {
         return (
             <div>
                 <SearchBar postSearch={this.state.postArray} filteredPostsSearch={this.filteredPost} />
-                {this.state.searchCountry[0] ? //if there is at least one position in the array
-                    (this.state.searchCountry.map((post) => {
+                {this.state.search[0] ? //if there is at least one position in the array
+                    (this.state.search.map((post) => {
                         return <Card post={post} />
                     }))
 

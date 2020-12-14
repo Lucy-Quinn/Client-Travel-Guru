@@ -1,8 +1,6 @@
 import axios from "axios";
 import React from "react";
 import { withAuth } from "../../context/auth-context";
-import { Link } from "react-router-dom";
-import { Route, Redirect } from "react-router-dom";
 
 class EditPost extends React.Component {
   state = {
@@ -18,7 +16,7 @@ class EditPost extends React.Component {
     const { postId } = this.props.match.params;
 
     axios
-      .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, {
+      .get(`${process.env.REACT_APP_API_URL}/api/post/${postId}`, {
         withCredentials: true,
       })
       .then((response) => {
@@ -46,7 +44,7 @@ class EditPost extends React.Component {
 
     axios
       .put(
-        `${process.env.REACT_APP_API_URI}/api/editPost/${postId}`,
+        `${process.env.REACT_APP_API_URL}/api/editPost/${postId}`,
         { title, country, city, description, image },
         { withCredentials: true }
       )
@@ -68,7 +66,7 @@ class EditPost extends React.Component {
     this.setState({ isReady: false }, () => {
 
       axios
-        .post(`${process.env.REACT_APP_API_URI}/api/upload`, uploadData, {
+        .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData, {
           withCredentials: true,
         })
         .then((response) => {
@@ -88,7 +86,7 @@ class EditPost extends React.Component {
     const userId = this.props.user._id;
 
     axios
-      .delete(`${process.env.REACT_APP_API_URI}/api/deletePost/${postId}`, { withCredentials: true })
+      .delete(`${process.env.REACT_APP_API_URL}/api/deletePost/${postId}`, { withCredentials: true })
       .then((response) => {
         console.log("reponse", response);
         this.props.history.push(`/myPosts/${userId}`)

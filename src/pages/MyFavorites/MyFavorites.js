@@ -20,7 +20,7 @@ class MyFavorites extends React.Component {
     
 
     axios
-      .get(`${process.env.REACT_APP_API_URI}/api/favoritePosts/${userId}`, {
+      .get(`${process.env.REACT_APP_API_URL}/api/favoritePosts/${userId}`, {
         withCredentials: true,
       })
       .then((response) => {
@@ -33,7 +33,7 @@ class MyFavorites extends React.Component {
 
   deleteHandler = (postId) => {
     axios
-      .delete(`${process.env.REACT_APP_API_URI}/api/deleteFavorite/${postId}`, {
+      .delete(`${process.env.REACT_APP_API_URL}/api/deleteFavorite/${postId}`, {
         withCredentials: true,
       })
       .then((response) => {

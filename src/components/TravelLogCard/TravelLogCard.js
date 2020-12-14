@@ -1,7 +1,4 @@
-import Axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import { withAuth } from "../../context/auth-context";
 
 class TravelLogCard extends React.Component {

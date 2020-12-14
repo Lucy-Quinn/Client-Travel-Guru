@@ -39,7 +39,11 @@ class Signup extends Component {
     uploadData.append("image", file);
 
     axios
-      .post(`${process.env.REACT_APP_API_URI}/auth/upload`, uploadData, { withCredentials: true })
+      .post(
+        `${process.env.REACT_APP_API_URL}/auth/upload`,
+        uploadData,
+        { withCredentials: true }
+      )
       .then((response) => {
         // console.log("response is: ", response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state

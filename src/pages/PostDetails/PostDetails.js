@@ -19,9 +19,10 @@ class PostDetails extends React.Component {
   getPost = () => {
     const { postId } = this.props.match.params;
     axios
-      .get(`${process.env.REACT_APP_API_URI}/api/post/${postId}`, {
-        withCredentials: true,
-      })
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/post/${postId}`,
+        { withCredentials: true }
+      )
       .then((response) => {
         this.setState({
           postDetails: response.data,
@@ -40,10 +41,8 @@ class PostDetails extends React.Component {
 
     axios
       .post(
-        `${process.env.REACT_APP_API_URI}/api/favoritePost/add/${postId}/${userId}`,
-        {
-          withCredentials: true,
-        }
+        `${process.env.REACT_APP_API_URL}/api/favoritePost/add/${postId}/${userId}`,
+        { withCredentials: true }
       )
       .then((response) => {
         console.log('response comment', response);
@@ -55,12 +54,10 @@ class PostDetails extends React.Component {
 
 
   handleFormSubmit = (description) => {
-
     const { postId } = this.props.match.params;
-
     axios
       .post(
-        `${process.env.REACT_APP_API_URI}/api/createComment/${postId}`,
+        `${process.env.REACT_APP_API_URL}/api/createComment/${postId}`,
         { description },
         { withCredentials: true }
       )
@@ -69,8 +66,6 @@ class PostDetails extends React.Component {
         this.getPost();
       })
       .catch((err) => console.log(err));
-
-
   };
 
   render() {
@@ -82,7 +77,6 @@ class PostDetails extends React.Component {
       description,
       updated_at,
     } = this.state.postDetails;
-
 
     return (
       <div>
@@ -99,7 +93,6 @@ class PostDetails extends React.Component {
           Save to Favorites
         </button>
         {this.state.commentsArray.map((comment) => <Comment postDetails={comment} />)}
-
         <CreateComment handleFormSubmit={this.handleFormSubmit} />
       </div>
     );

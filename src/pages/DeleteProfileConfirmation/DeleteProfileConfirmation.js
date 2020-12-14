@@ -11,7 +11,7 @@ class DeleteProfileConfirmation extends React.Component {
 
         axios
             .delete(
-                `${process.env.REACT_APP_API_URI}/api/deleteProfileConfirmation/${userId}`,
+                `${process.env.REACT_APP_API_URL}/api/deleteProfileConfirmation/${userId}`,
                 {
                     withCredentials: true,
                 }

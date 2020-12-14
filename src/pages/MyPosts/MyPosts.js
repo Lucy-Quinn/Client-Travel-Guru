@@ -13,9 +13,10 @@ class MyPosts extends React.Component {
     this.setState({ userId });
 
     axios
-      .get(`${process.env.REACT_APP_API_URI}/api/myPosts/${userId}`, {
-        withCredentials: true,
-      })
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/myPosts/${userId}`, 
+        {withCredentials: true}
+      )
       .then((response) => {
         console.log("reponse", response);
         const postsArr = response.data;

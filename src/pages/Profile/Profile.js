@@ -5,14 +5,15 @@ import { Link } from 'react-router-dom';
 
 
 class Profile extends React.Component {
-
     state = {
     }
-
     componentDidMount() {
         const { userId } = this.props.match.params;
         axios
-            .get(`${process.env.REACT_APP_API_URI}/api/profile/${userId}`, { withCredentials: true })
+            .get(
+                `${process.env.REACT_APP_API_URL}/api/profile/${userId}`,
+                { withCredentials: true }
+            )
             .then((response) => {
                 const { name, username, nationality, email, myFavoriteTrip, description, image, _id } = response.data;
                 this.setState({ name, username, nationality, email, myFavoriteTrip, description, image, _id })
@@ -55,6 +56,5 @@ class Profile extends React.Component {
         )
     }
 }
-
 
 export default withAuth(Profile);

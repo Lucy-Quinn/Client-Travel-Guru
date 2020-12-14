@@ -2,10 +2,11 @@ import axios from "axios";
 
 class AuthService {
   constructor() {
-    this.auth = axios.create({
-      baseURL: "http://localhost:5000",
-      withCredentials: true
-    });
+    this.auth = axios
+      .create({
+        baseURL: process.env.REACT_APP_API_URL,
+        withCredentials: true
+      });
   }
 
   signup(name, username, email, password, image) {
@@ -43,7 +44,6 @@ class AuthService {
     return pr;
   }
 }
-
 
 const authService = new AuthService();
 

@@ -12,10 +12,6 @@ class CreateTravelLog extends React.Component {
     description: undefined,
   };
 
-  //   componentDidMount() {
-  //     // const { postId } = this.props.match.params;
-  //   }
-
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -28,7 +24,7 @@ class CreateTravelLog extends React.Component {
 
     axios
       .post(
-        `${process.env.REACT_APP_API_URI}/api/createTravelLog`,
+        `${process.env.REACT_APP_API_URL}/api/createTravelLog`,
         { title, country, city, description },
         { withCredentials: true }
       )

@@ -10,17 +10,15 @@ class TravelLog extends React.Component {
   };
 
   componentDidMount() {
-
     this.getTravelLogs();
-
-
   }
 
   getTravelLogs = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URI}/api/travelLogs`, {
-        withCredentials: true,
-      })
+      .get(
+        `${process.env.REACT_APP_API_URL}/api/travelLogs`,
+        { withCredentials: true }
+      )
       .then((response) => {
         console.log("reponse", response);
         const travelLogsArr = response.data;
@@ -30,13 +28,10 @@ class TravelLog extends React.Component {
   }
 
   deleteHandler = (travelLogId) => {
-
     axios
       .delete(
-        `${process.env.REACT_APP_API_URI}/api/deleteTravelLog/${travelLogId}`,
-        {
-          withCredentials: true,
-        }
+        `${process.env.REACT_APP_API_URL}/api/deleteTravelLog/${travelLogId}`,
+        { withCredentials: true }
       )
       .then((response) => {
         console.log("reponse", response);

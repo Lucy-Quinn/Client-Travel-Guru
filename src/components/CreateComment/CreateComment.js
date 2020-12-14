@@ -1,8 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
 import { withAuth } from "../../context/auth-context";
-import { Route, Redirect } from "react-router-dom";
 
 class CreateComment extends React.Component {
   state = {

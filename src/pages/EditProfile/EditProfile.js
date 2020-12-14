@@ -2,7 +2,6 @@ import axios from "axios";
 import React from "react";
 import { withAuth } from '../../context/auth-context';
 import { Link } from 'react-router-dom';
-import { Route, Redirect } from 'react-router-dom';
 
 class EditProfile extends React.Component {
 
@@ -45,8 +44,9 @@ class EditProfile extends React.Component {
         const { userId } = this.props.match.params;
         axios
             .put(
-                `${process.env.REACT_APP_API_URI}/api/editProfile/${userId}`,
-                { name, username, nationality, myFavoriteTrip, description, image }, { withCredentials: true }
+                `${process.env.REACT_APP_API_URL}/api/editProfile/${userId}`,
+                { name, username, nationality, myFavoriteTrip, description, image },
+                { withCredentials: true }
             )
             .then(() => {
                 this.props.history.push(`/profile/${userId}`);
@@ -68,7 +68,7 @@ class EditProfile extends React.Component {
 
 
             axios
-                .post(`${process.env.REACT_APP_API_URI}/api/upload`, uploadData, { withCredentials: true })
+                .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData, { withCredentials: true })
                 .then((response) => {
                     console.log("response is: ", response);
                     // after the console.log we can see that response carries 'secure_url' which we can use to update the state

@@ -52,7 +52,6 @@ class AuthProvider extends React.Component {
       </Provider>
     )
   }
-
 }
 
 

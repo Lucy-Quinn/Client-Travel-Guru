@@ -27,13 +27,16 @@ class Dashboard extends React.Component {
 
     filteredPost = (postSearchInput) => {
         const postArray = [...this.state.postArray];
-        const foundInput = postArray.filter((post) => {
-            return post.country === postSearchInput || post.city === postSearchInput
+        const filteredSearch = postArray.filter((post) => {
+            const searchInput = postSearchInput.toLowerCase();
+            const country = post.country.toLowerCase();
+            const city = post.city.toLowerCase();
+            return country.includes(searchInput) || city.includes(searchInput)
         });
         // const foundCity = postArray.filter((post) => {
         //     return post.city === postSearchInput
         // });
-        this.setState({ search: foundInput });
+        this.setState({ search: filteredSearch });
 
     }
 

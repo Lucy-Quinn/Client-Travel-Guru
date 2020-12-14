@@ -5,8 +5,7 @@ import { withAuth } from "../../context/auth-context";
 import { Link } from "react-router-dom";
 
 class MyPosts extends React.Component {
-  state = {
-  };
+  state = {};
 
   componentDidMount() {
     const { userId } = this.props.match.params;
@@ -23,36 +22,33 @@ class MyPosts extends React.Component {
         this.setState({ postsArr });
       })
       .catch((err) => console.log(err));
-
   }
 
   render() {
     return (
       <div>
-        {this.state.postsArr
-          ? this.state.postsArr.map((post) => {
+        {this.state.postsArr && this.state.postsArr.length > 0 ? (
+          this.state.postsArr.map((post) => {
             return (
               <div>
                 <Card post={post} />
-
-                {/* <Link to={{ pathname: `/editPost/${post._id}`, query: { post } }} >
-                  <button>Edit Post</button>
-                </Link> */}
-
-
-                {/* <Link to={{
-  pathname: '/tylermcginnis',
-  state: {
-    fromNotifications: true
-  }
-}}>Tyler McGinnis</Link> */}
-                <Link exact to={{ pathname: `/editPost/${post._id}`, state: { post } }}>
+                <Link
+                  exact
+                  to={{ pathname: `/editPost/${post._id}`, state: { post } }}
+                >
                   <button>Edit Post</button>
                 </Link>
               </div>
             );
           })
-          : null}
+        ) : (
+          <p>
+            You don't have any Travel Posts. Create one{" "}
+            <Link exact to={`/createPost`}>
+              here!
+            </Link>
+          </p>
+        )}
         <div></div>
       </div>
     );

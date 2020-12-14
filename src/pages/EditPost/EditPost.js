@@ -80,6 +80,21 @@ class EditPost extends React.Component {
       });
   };
 
+  deleteHandler = () => {
+    const { postId } = this.props.match.params;
+    const userId = this.props.user._id;
+
+    axios
+      .delete(`${process.env.REACT_APP_API_URI}/api/deletePost/${postId}`, {
+        withCredentials: true,
+      })
+      .then((response) => {
+        console.log("reponse", response);
+        this.props.history.push(`/myPosts/${userId}`)
+      })
+      .catch((err) => console.log(err));
+  };
+
   render() {
     return (
       <div>
@@ -139,6 +154,7 @@ class EditPost extends React.Component {
               disabled={!this.state.isReady}
             />
           </form>
+          <button onClick={this.deleteHandler}>Delete</button>
         </div>
       </div>
     );

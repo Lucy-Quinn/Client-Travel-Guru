@@ -3,7 +3,10 @@ import { withAuth } from '../../context/auth-context';
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
-  state = { username: "", password: "" };
+  state = {
+    username: "",
+    password: ""
+  };
 
   handleFormSubmit = event => {
     event.preventDefault();

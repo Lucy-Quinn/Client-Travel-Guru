@@ -5,7 +5,9 @@ import { withAuth } from "../../context/auth-context";
 import { Link } from "react-router-dom";
 
 class MyPosts extends React.Component {
-  state = {};
+  state = {
+    postsArr: []
+  };
 
   componentDidMount() {
     const { userId } = this.props.match.params;

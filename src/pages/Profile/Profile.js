@@ -6,6 +6,14 @@ import { Link } from 'react-router-dom';
 
 class Profile extends React.Component {
     state = {
+        name: '',
+        username: '',
+        nationality: '',
+        email: '',
+        myFavoriteTrip: '',
+        description: '',
+        image: '',
+        _id: ''
     }
     componentDidMount() {
         const { userId } = this.props.match.params;
@@ -16,6 +24,7 @@ class Profile extends React.Component {
             )
             .then((response) => {
                 const { name, username, nationality, email, myFavoriteTrip, description, image, _id } = response.data;
+
                 this.setState({ name, username, nationality, email, myFavoriteTrip, description, image, _id })
             })
             .catch((err) => console.log(err));

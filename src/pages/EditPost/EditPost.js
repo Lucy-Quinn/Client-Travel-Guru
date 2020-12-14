@@ -88,9 +88,7 @@ class EditPost extends React.Component {
     const userId = this.props.user._id;
 
     axios
-      .delete(`${process.env.REACT_APP_API_URI}/api/deletePost/${postId}`, {
-        withCredentials: true,
-      })
+      .delete(`${process.env.REACT_APP_API_URI}/api/deletePost/${postId}`, { withCredentials: true })
       .then((response) => {
         console.log("reponse", response);
         this.props.history.push(`/myPosts/${userId}`)

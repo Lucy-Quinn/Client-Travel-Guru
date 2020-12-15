@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./LandingPage.css";
 
 function LandingPage() {
   return (
     <div>
-      <h1>Home Page</h1>
-
-      <div>header image</div>
-      <div>
+      <header className="header">
+        <div className="header-img"></div>
+        <div className="header-title">
+          <h1>Travel Guru</h1>
+        </div>
+      </header>
+      <section className="landing-buttons">
         <Link to={"/signup"}>
           <button>Sign Up</button>
         </Link>
@@ -15,16 +19,18 @@ function LandingPage() {
         <Link to={"login"}>
           <button>Login</button>
         </Link>
-      </div>
+      </section>
 
-      <h4>What is Travel Guru?</h4>
-      <p>
-        Travel Guru is a platform where you can interact with other users about
-        travel experiences. Create a travel post to share your wonderful trips,
-        comment on other users posts and add them to your favorites!. Also you
-        have a private section dedicated for your next travel ideas, go and
-        check your Travel Log!
-      </p>
+      <section className="about-us">
+        <h4>What is Travel Guru?</h4>
+        <p>
+          Have you ever been on holiday and forgotten where you have been
+          exactly and what you have done? Also, looking for some inspiration?
+          Join our community and search for travel ideas and keep a record of
+          all your travel memories. Travel experiences should never be
+          forgotten!
+        </p>
+      </section>
     </div>
   );
 }

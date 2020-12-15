@@ -9,7 +9,8 @@ class PostDetails extends React.Component {
   state = {
     postDetails: "",
     postAuthor: "",
-    commentsArray: []
+    commentsArray: [],
+    isActive: false
   };
 
   componentDidMount() {
@@ -68,6 +69,10 @@ class PostDetails extends React.Component {
       .catch((err) => console.log(err));
   };
 
+  handleToggle = () => {
+    this.setState({ isActive: !this.state.isActive })
+  }
+
   render() {
     const {
       title,
@@ -92,8 +97,15 @@ class PostDetails extends React.Component {
         <button type="submit" onClick={this.handleFavorite}>
           Save to Favorites
         </button>
+        <button onClick={this.handleToggle}>
+          Write a comment
+        </button>
+        {this.state.isActive ?
+          <CreateComment handleFormSubmit={this.handleFormSubmit} />
+          :
+          null
+        }
         {this.state.commentsArray.map((comment) => <Comment postDetails={comment} />)}
-        <CreateComment handleFormSubmit={this.handleFormSubmit} />
       </div>
     );
   }

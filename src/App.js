@@ -23,48 +23,33 @@ import MyFavorites from "./pages/MyFavorites/MyFavorites";
 
 class App extends Component {
   render() {
+
+    console.log('props', this.props)
     return (
       <div className="container">
+
+
         <Navbar />
 
         <Switch>
+
           <AnonRoute exact path="/" component={LandingPage} />
 
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
 
-          {/* <PrivateRoute exact path="/private" component={Private} /> */}
           <PrivateRoute exact path="/profile/:userId" component={Profile} />
-          <PrivateRoute
-            exact
-            path="/editProfile/:userId"
-            component={EditProfile}
-          />
+          <PrivateRoute exact path="/editProfile/:userId" component={EditProfile} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute
-            exact
-            path="/postDetails/:postId"
-            component={PostDetails}
-          />
+          <PrivateRoute exact path="/postDetails/:postId" component={PostDetails} />
           <PrivateRoute exact path="/myPosts/:userId" component={MyPosts} />
           <PrivateRoute exact path="/createPost" component={CreatePost} />
           <PrivateRoute exact path="/editPost/:postId" component={EditPost} />
           <PrivateRoute exact path="/travelLogs" component={TravelLog} />
-          <PrivateRoute
-            exact
-            path="/createTravelLog"
-            component={CreateTravelLog}
-          />
-          <PrivateRoute
-            exact
-            path="/deleteProfileConfirmation/:userId"
-            component={DeleteProfileConfirmation}
-          />
-          <PrivateRoute
-            exact
-            path="/favoritePosts/:userId"
-            component={MyFavorites}
-          />
+          <PrivateRoute exact path="/createTravelLog" component={CreateTravelLog} />
+          <PrivateRoute exact path="/deleteProfileConfirmation/:userId" component={DeleteProfileConfirmation} />
+          <PrivateRoute exact path="/favoritePosts/:userId" component={MyFavorites} />
+
         </Switch>
       </div>
     );

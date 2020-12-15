@@ -1,4 +1,5 @@
 import React from 'react'
+import './SearchBar.css'
 
 class SearchBar extends React.Component {
     state = {
@@ -12,9 +13,8 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="searchbar">
                 <input type="text" placeholder="Search by Country/City..." name="search" value={this.state.search} onChange={this.handleSearch} />
-                <button type="submit">Search</button>
             </div>
         )
     }

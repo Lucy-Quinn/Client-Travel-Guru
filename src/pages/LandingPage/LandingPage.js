@@ -13,11 +13,11 @@ function LandingPage() {
       </header>
       <section className="landing-buttons">
         <Link to={"/signup"}>
-          <button>Sign Up</button>
+          <button className="buttons">Sign Up</button>
         </Link>
 
         <Link to={"login"}>
-          <button>Login</button>
+          <button className="buttons">Login</button>
         </Link>
       </section>
 

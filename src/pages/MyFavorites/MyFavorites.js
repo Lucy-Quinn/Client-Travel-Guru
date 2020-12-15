@@ -46,6 +46,7 @@ class MyFavorites extends React.Component {
   render() {
     return (
       <div>
+      <h1>My Favorite Posts</h1>
         {this.state.favoritesArr && this.state.favoritesArr.length > 0 ? (
           this.state.favoritesArr.map((post) => {
             return (

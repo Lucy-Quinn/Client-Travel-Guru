@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from '../../context/auth-context';
 import axios from "axios";
-import { Route, Redirect } from 'react-router-dom';
+import "./Signup.css";
+
 
 class Signup extends Component {
   state = {
@@ -59,7 +60,10 @@ class Signup extends Component {
     const { name, username, email, password, image } = this.state;
     return (
       <div>
-        <h1>Sign Up</h1>
+        <div className="signup-header">
+
+          <h1>Sign Up</h1>
+        </div>
 
         <form onSubmit={this.handleFormSubmit}>
 
@@ -75,14 +79,16 @@ class Signup extends Component {
           <label>Password:</label>
           <input type="password" name="password" value={password} onChange={this.handleChange} />
 
-          <label>Image:</label>
-          <input type="file" onChange={this.handleFileUpload} />
+          <label className="image-label">Image:</label>
+          <input className="image-upload" type="file" onChange={this.handleFileUpload} />
 
-          <input type="submit" value="Signup" disabled={!this.state.isReady} />
+          <button className="signup-button" type="submit" value="Signup" disabled={!this.state.isReady} >Sign Up</button>
         </form>
 
-        <p>Already have account?</p>
-        <Link to={"/login"}> Login</Link>
+        <div className="existing-account">
+          <h4>Already have account?</h4>
+          <Link to={"/login"}> <h5>Login</h5></Link>
+        </div>
       </div>
     );
   }

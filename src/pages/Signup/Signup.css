@@ -1,0 +1,70 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/*******************************/
+
+form > input {
+  padding: 5px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 1.6rem;
+}
+
+form > label {
+  font-size: 1.6rem;
+}
+
+/*******************************/
+
+.signup-header {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0px;
+}
+
+.signup-header > h1 {
+  font-size: 4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 500px;
+  margin: 10px 20px;
+}
+
+.image-upload {
+  border: none;
+}
+
+.signup-button {
+  padding: 15px;
+  width: 200px;
+  margin: 30px auto 10px auto;
+  border-radius: 10px;
+  font-size: 1.6rem;
+}
+
+.image-label {
+  margin: 15px 0px 0px 0px;
+}
+
+.existing-account > h4 {
+  font-size: 1.7rem;
+}
+
+.existing-account h5 {
+  font-size: 1.6rem;
+}
+
+.existing-account {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px auto;
+}

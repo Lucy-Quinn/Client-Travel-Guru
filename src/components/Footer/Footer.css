@@ -1,7 +1,13 @@
-.footer-text {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: grey;
-  height: 20%;
+  height: 60px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-size: 15px;
 }

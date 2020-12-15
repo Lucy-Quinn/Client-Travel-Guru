@@ -1,0 +1,39 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.login-container {
+  height: 800px;
+}
+/*******************************/
+
+.login-form > input {
+  padding: 5px 0px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 1.6rem;
+}
+
+.login-form > label {
+  font-size: 1.6rem;
+}
+
+.login-header > h1 {
+  font-size: 4rem;
+}
+/*******************************/
+
+.login-header {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 523px;
+  margin: 10px 20px;
+}

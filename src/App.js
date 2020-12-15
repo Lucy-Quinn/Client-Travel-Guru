@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
-
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -22,6 +20,8 @@ import TravelLog from "./pages/TravelLog/TravelLog";
 import CreateTravelLog from "./pages/CreateTravelLog/CreateTravelLog";
 import DeleteProfileConfirmation from "./pages/DeleteProfileConfirmation/DeleteProfileConfirmation";
 import MyFavorites from "./pages/MyFavorites/MyFavorites";
+
+import "./App.css";
 
 class App extends Component {
   render() {

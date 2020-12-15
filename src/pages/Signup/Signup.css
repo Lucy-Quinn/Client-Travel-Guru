@@ -5,17 +5,20 @@ body {
 
 /*******************************/
 
-form > input {
+.signup-form > input {
   padding: 5px 0px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 1.6rem;
 }
 
-form > label {
+.signup-form > label {
   font-size: 1.6rem;
 }
 
+.signup-header > h1 {
+  font-size: 4rem;
+}
 /*******************************/
 
 .signup-header {
@@ -24,23 +27,22 @@ form > label {
   padding: 40px 0px;
 }
 
-.signup-header > h1 {
-  font-size: 4rem;
-}
-
-form {
+.signup-form {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 500px;
+  height: 523px;
   margin: 10px 20px;
 }
 
-.image-upload {
+#image-upload {
+  border: none;
+}
+input[type="file"] {
   border: none;
 }
 
-.signup-button {
+.form-button {
   padding: 15px;
   width: 200px;
   margin: 30px auto 10px auto;

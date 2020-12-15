@@ -65,7 +65,7 @@ class Signup extends Component {
           <h1>Sign Up</h1>
         </div>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="signup-form" onSubmit={this.handleFormSubmit}>
 
           <label>Name:</label>
           <input type="text" name="name" value={name} onChange={this.handleChange} />
@@ -80,13 +80,13 @@ class Signup extends Component {
           <input type="password" name="password" value={password} onChange={this.handleChange} />
 
           <label className="image-label">Image:</label>
-          <input className="image-upload" type="file" onChange={this.handleFileUpload} />
+          <input id="image-upload" type="file" onChange={this.handleFileUpload} />
 
-          <button className="signup-button" type="submit" value="Signup" disabled={!this.state.isReady} >Sign Up</button>
+          <button className="form-button" type="submit" value="Signup" disabled={!this.state.isReady} >Sign Up</button>
         </form>
 
         <div className="existing-account">
-          <h4>Already have account?</h4>
+          <h4>Already have an account?</h4>
           <Link to={"/login"}> <h5>Login</h5></Link>
         </div>
       </div>

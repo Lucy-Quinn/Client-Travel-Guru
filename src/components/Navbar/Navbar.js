@@ -12,12 +12,13 @@ import {
   Item,
   Divider,
 } from "react-bootstrap";
+import "./Navbar.css";
 
 class OurNavbar extends Component {
   render() {
     //const { user, logout, isLoggedin } = this.props;
     return (
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar className="ourNavbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">Travel Guru</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -45,11 +46,11 @@ class OurNavbar extends Component {
               </Nav.Link> */}
             </Nav>
           ) : (
-            <Nav className="mr-auto">
-              <Nav.Link href="/signup">Sign Up</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
-            </Nav>
-          )}
+              <Nav className="mr-auto">
+                <Nav.Link href="/signup">Sign Up</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
+              </Nav>
+            )}
         </Navbar.Collapse>
       </Navbar>
     );

@@ -1,3 +1,34 @@
 .welcome-user {
   display: none;
 }
+
+.navbar-dark .navbar-brand {
+  font-size: 2.6rem;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: #fff;
+  box-shadow: none;
+  border: 1px solid #fff;
+}
+
+.mr-auto,
+.mx-auto {
+  font-size: 1.8rem;
+}
+
+/* #collasible-nav-dropdown {
+  background-color: #343a40;
+} */
+
+.navbar-nav .dropdown-menu {
+  background-color: #343a40;
+  border: none;
+  color: rgba(255, 255, 255, 0.637);
+}
+.navbar-nav .dropdown-menu > a {
+  color: white;
+  font-size: 1.8rem;
+}

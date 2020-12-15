@@ -80,8 +80,12 @@ class PostDetails extends React.Component {
       country,
       city,
       description,
-      updated_at,
+      updated_at
     } = this.state.postDetails;
+
+
+
+
 
     return (
       <div>
@@ -92,7 +96,7 @@ class PostDetails extends React.Component {
         <p>{description}</p>
         <div>
           <p>{this.state.postAuthor}</p>
-          <p>{updated_at}</p>
+          {this.state.postDetails.updated_at ? this.state.postDetails.updated_at.slice(0, 10).split('-').reverse().join('-') : null}
         </div>
         <button type="submit" onClick={this.handleFavorite}>
           Save to Favorites

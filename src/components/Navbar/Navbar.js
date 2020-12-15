@@ -24,7 +24,7 @@ class Navbar extends Component {
 
               <li class="nav-item">
                 <Link className="nav-link" to={'/dashboard'} id='home-btn'>
-                  <p>Search for Travel Posts</p>
+                  Search
                 </Link>
               </li>
               <li class="nav-item">

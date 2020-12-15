@@ -8,6 +8,7 @@ import { AuthProvider } from './context/auth-context';
 //bootstrap css
 import 'bootstrap/dist/css/bootstrap.css';
 
+
 ReactDOM.render(
   <Router>
     <AuthProvider>

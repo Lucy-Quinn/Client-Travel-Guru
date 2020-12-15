@@ -27,7 +27,7 @@ class App extends Component {
 
     console.log('props', this.props)
     return (
-      <div className="container">
+      <div>
 
 
         <Navbar />

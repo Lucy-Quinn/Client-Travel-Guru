@@ -3,6 +3,7 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
@@ -51,6 +52,7 @@ class App extends Component {
           <PrivateRoute exact path="/favoritePosts/:userId" component={MyFavorites} />
 
         </Switch>
+        <Footer />
       </div>
     );
   }

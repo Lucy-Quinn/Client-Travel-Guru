@@ -15,9 +15,9 @@ class MyFavorites extends React.Component {
     this.getFavorites();
   }
 
-  getFavorites=()=>{
+  getFavorites = () => {
     const userId = this.props.user._id;
-    
+
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/favoritePosts/${userId}`, {
         withCredentials: true,
@@ -46,7 +46,7 @@ class MyFavorites extends React.Component {
     return (
       <div className="my-posts-container">
 
-      <h1 className="my-posts-header">My Favorite Posts</h1>
+        <h1 className="my-posts-header">My Favorite Posts</h1>
         {this.state.favoritesArr && this.state.favoritesArr.length > 0 ? (
           this.state.favoritesArr.map((post) => {
             return (
@@ -59,8 +59,9 @@ class MyFavorites extends React.Component {
             );
           })
         ) : (
-          <p className="no-posts">You don't have any favorites 💔 You can add more favorites by searching for travel posts <Link exact to={`/dashboard`}>here</Link></p>
-        )}
+            <p className="no-posts">You don't have any favorites 💔
+              <br />You can add more favorites by searching for travel posts <Link exact to={`/dashboard`}>here!</Link></p>
+          )}
         <div></div>
       </div>
     );

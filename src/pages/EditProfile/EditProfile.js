@@ -157,6 +157,8 @@ class EditProfile extends React.Component {
           <button
             className="form-button"
             type="submit"
+            value="Submit"
+
             disabled={!this.state.isReady}
           >
             Save

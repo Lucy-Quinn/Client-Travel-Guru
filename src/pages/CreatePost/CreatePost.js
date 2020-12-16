@@ -61,11 +61,11 @@ class CreatePost extends React.Component {
   render() {
     return (
       <div>
+        <header className="edit-form-header">
+          <h1>Create a Post</h1>
+        </header>
         <div>
-          <h2>Create a Post</h2>
-        </div>
-        <div>
-          <form onSubmit={this.handleFormSubmit}>
+          <form className="edit-form" onSubmit={this.handleFormSubmit}>
             <label>Title:</label>
             <input
               type="text"
@@ -101,13 +101,8 @@ class CreatePost extends React.Component {
               required
             />
 
-            <label>Image</label>
-            <input
-              name="image"
-              type="file"
-              onChange={this.handleFileUpload}
-              required
-            ></input>
+            <label className="image-label">Image</label>
+
             <span>
               <img
                 style={{ width: "100px" }}
@@ -115,12 +110,22 @@ class CreatePost extends React.Component {
                 alt=""
               ></img>
             </span>
-
             <input
+              id="image-upload"
+              name="image"
+              type="file"
+              onChange={this.handleFileUpload}
+              required
+            ></input>
+
+            <button
+              className="form-button"
               type="submit"
               value="Submit"
               disabled={!this.state.isReady}
-            />
+            >
+              Post
+          </button>
           </form>
         </div>
       </div>

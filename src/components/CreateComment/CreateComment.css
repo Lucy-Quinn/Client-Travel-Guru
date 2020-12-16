@@ -1,0 +1,24 @@
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+
+.comment-form > textarea {
+  width: 250px;
+}
+
+.comment-button {
+  padding: 5px;
+  width: 80px;
+  margin: 30px auto 10px auto;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  border: none;
+  border: 1px solid rgba(128, 128, 128, 0.603);
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.603);
+  letter-spacing: 1px;
+  background-color: #70f7c8;
+}

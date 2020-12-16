@@ -1,6 +1,8 @@
 import React from "react";
 import { withAuth } from "../../context/auth-context";
 
+import './CreateComment.css';
+
 class CreateComment extends React.Component {
   state = {
     description: undefined,
@@ -16,7 +18,7 @@ class CreateComment extends React.Component {
   render() {
     return (
       <div>
-        <form
+        <form className="comment-form"
           onSubmit={() => this.props.handleFormSubmit(this.state.description)}>
           <textarea
             name="description"
@@ -24,7 +26,7 @@ class CreateComment extends React.Component {
             onChange={this.handleChange}
           />
 
-          <button type="submit">
+          <button className="comment-button" type="submit">
             Send
           </button>
         </form>

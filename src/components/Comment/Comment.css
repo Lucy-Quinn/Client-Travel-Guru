@@ -1,0 +1,12 @@
+.comment-container {
+  background-color: #f0f2f5;
+  width: 80%;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.comment-container p:first-child {
+  font-weight: 700;
+  margin-bottom: 10px;
+}

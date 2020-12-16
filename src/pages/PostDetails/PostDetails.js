@@ -1,9 +1,11 @@
+import React from "react";
 import axios from "axios";
 import Comment from "./../../components/Comment/Comment";
 import CreateComment from "./../../components/CreateComment/CreateComment";
 import { withAuth } from "../../context/auth-context";
+import Heart from './../../images/heart.png';
 
-import React from "react";
+import './PostDetails.css';
 
 class PostDetails extends React.Component {
   state = {
@@ -85,27 +87,41 @@ class PostDetails extends React.Component {
 
     return (
       <div>
-        <h1>{title}</h1>
-        <img src={image} alt="a photo of this post" />
-        <h2>{country}</h2>
-        <h3>{city}</h3>
-        <p>{description}</p>
-        <div>
-          <p>{this.state.postAuthor}</p>
-          {this.state.postDetails.updated_at ? this.state.postDetails.updated_at.slice(0, 10).split('-').reverse().join('-') : null}
+        <div className="post-header">
+          <h1>{title}</h1>
+          <img id="post-image" src={image} alt="a photo of this post" />
         </div>
-        <button type="submit" onClick={this.handleFavorite}>
-          Save to Favorites
-        </button>
-        <button onClick={this.handleToggle}>
-          Write a comment
-        </button>
-        {this.state.isActive ?
-          <CreateComment handleFormSubmit={this.handleFormSubmit} />
-          :
-          null
-        }
-        {this.state.commentsArray.map((comment) => <Comment postDetails={comment} />)}
+
+        <section className="post-info">
+          <div className="post-info-header">
+            <h2>{country}</h2>
+            <button className="favorites-button" type="submit" onClick={this.handleFavorite}>
+              <img src={Heart} alt="heart icon" />
+            </button>
+          </div>
+          <h3>{city}</h3>
+          <p className="post-description">{description}</p>
+          <div className="post-author">
+            <p>{this.state.postDetails.updated_at ? this.state.postDetails.updated_at.slice(0, 10).split('-').reverse().join('-') : null}</p>
+            <p>Posted by: {this.state.postAuthor}</p>
+
+          </div>
+        </section>
+        <section className="button-container">
+
+
+          <button className="form-button" onClick={this.handleToggle}>
+            Write a comment
+          </button>
+        </section>
+        <section className="comment-section">
+          {this.state.isActive ?
+            <CreateComment handleFormSubmit={this.handleFormSubmit} />
+            :
+            null
+          }
+          {this.state.commentsArray.map((comment) => <Comment postDetails={comment} />)}
+        </section>
       </div>
     );
   }

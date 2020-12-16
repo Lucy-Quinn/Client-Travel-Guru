@@ -1,0 +1,48 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.post-header > h1 {
+  margin: 20px;
+  width: 90%;
+  text-align: center;
+}
+#post-image {
+  width: 100%;
+  height: auto;
+}
+
+.post-info {
+  margin: 0 15px;
+}
+
+.post-info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 5px 0;
+  width: 100%;
+}
+
+.favorites-button {
+  border: none;
+  background-color: #fff;
+}
+.favorites-button > img {
+  width: 30px;
+}
+
+.post-description {
+  text-align: justify;
+  margin-top: 20px;
+}
+
+.post-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  font-style: italic;
+  font-weight: 500;
+}

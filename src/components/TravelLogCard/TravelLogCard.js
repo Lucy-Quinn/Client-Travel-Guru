@@ -22,7 +22,7 @@ class TravelLogCard extends React.Component {
         </section>
 
         <section className="travelog-card-footer">
-          <button className="card-button" onClick={
+          <button className="delete-card-button card-button" onClick={
             () => this.props.deleteHandler(this.props.travelLog._id)
           }>
             Delete

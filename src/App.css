@@ -23,6 +23,15 @@ body {
   font-size: 1.6rem;
 }
 
+a {
+  color: rgb(22, 20, 20);
+}
+
+.no-posts > a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
 a:hover {
   color: #70f7c8;
   text-decoration: none;
@@ -103,10 +112,17 @@ input {
   border: 1px solid rgba(128, 128, 128, 0.603);
   box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.603);
   letter-spacing: 1px;
-  color: whitesmoke;
-  background-color: #f86464;
 }
 
+.edit-card-button {
+  background-color: #70f7c8;
+  color: rgb(53, 52, 52);
+}
+
+.delete-card-button {
+  background-color: #f86464;
+  color: whitesmoke;
+}
 /* MyFavorites and MyPosts pages */
 
 .no-posts {

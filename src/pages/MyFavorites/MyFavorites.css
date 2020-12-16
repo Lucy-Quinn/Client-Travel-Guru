@@ -1,1 +1,8 @@
+body {
+  width: 100vw;
+  height: 100vh;
+}
 
+.my-posts-container {
+  min-height: 100vh;
+}

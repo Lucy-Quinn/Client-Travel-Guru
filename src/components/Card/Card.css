@@ -1,0 +1,24 @@
+.travel-post-card {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(128, 128, 128, 0.678);
+  box-shadow: 3px 3px 5px rgba(163, 156, 156, 0.76);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.travel-post-card-section {
+  margin: 10px;
+}
+
+.travel-card-title {
+  text-align: center;
+  width: 100%;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px 0 0 0;
+}

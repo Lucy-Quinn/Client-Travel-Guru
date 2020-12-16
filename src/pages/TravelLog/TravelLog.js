@@ -53,7 +53,7 @@ class TravelLog extends React.Component {
           </Link>
         </header>
         <section >
-          {this.state.travelLogsArr
+          {this.state.travelLogsArr && this.state.travelLogsArr.length > 0  
             ? this.state.travelLogsArr.map((travelLog) => {
               return (
                 <div className="travel-log">
@@ -61,7 +61,15 @@ class TravelLog extends React.Component {
                 </div>
               );
             })
-            : null}
+            : (
+              <p className="no-posts">
+            You don't have any Travel Logs. Create one{" "}
+            <Link exact to={`/createTravelLog`}>
+              here!
+            </Link>
+          </p>
+            )
+            }
         </section>
       </div>
     );

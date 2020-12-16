@@ -3,6 +3,8 @@ import React from "react";
 import { withAuth } from "../../context/auth-context";
 import { Link } from "react-router-dom";
 import { Route, Redirect } from "react-router-dom";
+import './CreateTravelLog.css';
+import './../../App.css';
 
 class CreateTravelLog extends React.Component {
   state = {
@@ -37,11 +39,13 @@ class CreateTravelLog extends React.Component {
   render() {
     return (
       <div>
+        <header className="edit-form-header">
+
+          <h1>Create Travel Log</h1>
+        </header>
+
         <div>
-          <h2>Create Travel Log Entry</h2>
-        </div>
-        <div>
-          <form onSubmit={this.handleFormSubmit}>
+          <form className="edit-form travel-log-form-height" onSubmit={this.handleFormSubmit}>
             <label>Title:</label>
             <input
               type="text"
@@ -76,12 +80,22 @@ class CreateTravelLog extends React.Component {
               onChange={this.handleChange}
               required
             />
+            <input className="form-button" type="submit" value="Save" />
+            {/* <button
+              className="form-button"
+              type="submit"
+              value="submit"
+              disabled={!this.state.isReady}
+            >
+              Save
+          </button> */}
 
-            <input type="submit" value="Save" />
           </form>
-          <Link exact to={`/travelLogs`}>
-            <button>Go back to your Travel Logs</button>
-          </Link>
+          <div className="button-container">
+            <Link exact to={`/travelLogs`}>
+              <button id="travellog-button" className="form-button">Go back to your Travel Logs</button>
+            </Link>
+          </div>
         </div>
       </div>
     );

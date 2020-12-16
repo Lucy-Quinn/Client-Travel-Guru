@@ -3,6 +3,8 @@ import axios from "axios";
 import TravelLogCard from "./../../components/TravelLogCard/TravelLogCard";
 import { withAuth } from "../../context/auth-context";
 import { Link } from "react-router-dom";
+import './TravelLog.css';
+import './../../App.css'
 
 class TravelLog extends React.Component {
   state = {

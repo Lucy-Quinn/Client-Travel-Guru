@@ -1,0 +1,31 @@
+.travel-log-card {
+  background-color: #f0f2f5;
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.travellog-card-header {
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.travellog-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 250px;
+}
+
+.travelog-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.travelog-card-footer > p {
+  font-style: italic;
+}

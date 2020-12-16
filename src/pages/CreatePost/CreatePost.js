@@ -65,7 +65,7 @@ class CreatePost extends React.Component {
           <h1>Create a Post</h1>
         </header>
         <div>
-          <form className="edit-form" onSubmit={this.handleFormSubmit}>
+          <form className="edit-form post-form-height" onSubmit={this.handleFormSubmit}>
             <label>Title:</label>
             <input
               type="text"

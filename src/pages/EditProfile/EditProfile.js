@@ -163,7 +163,7 @@ class EditProfile extends React.Component {
           </button>
         </form>
         {this.props.location.state.userInfo ? (
-          <div className="warning-button-container">
+          <div className="button-container">
             <Link
               to={`/deleteProfileConfirmation/${this.props.location.state.userInfo._id}`}
             >

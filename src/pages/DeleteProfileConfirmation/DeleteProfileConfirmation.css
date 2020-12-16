@@ -1,0 +1,33 @@
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.delete-confirmation-container {
+  height: 776px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.delete-button {
+  background-color: #f86464;
+  color: whitesmoke;
+}
+
+.delete-header {
+  padding: 40px 0 0 0;
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.delete-header > h1 {
+  margin-bottom: 20px;
+}
+
+.delete-header > p {
+  width: 76%;
+  margin: 0 auto;
+}

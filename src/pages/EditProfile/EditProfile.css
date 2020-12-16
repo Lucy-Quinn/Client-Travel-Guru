@@ -35,16 +35,14 @@ body {
   font-size: 1.6rem;
 }
 
-.warning-button-container {
-  margin: 0 auto;
-  width: 200px;
-  margin-bottom: 30px;
-}
-
 .image-label {
   margin: 15px 0 0 0;
 }
 
 #image-upload {
   border: none;
+}
+
+.warning-button {
+  background-color: #f1d484;
 }

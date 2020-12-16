@@ -1,6 +1,8 @@
 import axios from "axios";
 import React from "react";
 import { withAuth } from "../../context/auth-context";
+import './EditPost.css';
+import './../../App.css';
 
 class EditPost extends React.Component {
   state = {
@@ -97,11 +99,11 @@ class EditPost extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <header className="edit-form-header">
           <h2>Edit Post</h2>
-        </div>
+        </header>
         <div>
-          <form onSubmit={this.handleFormSubmit}>
+          <form className="edit-form" onSubmit={this.handleFormSubmit}>
             <label>Title:</label>
             <input
               type="text"
@@ -133,27 +135,34 @@ class EditPost extends React.Component {
               onChange={this.handleChange}
             />
 
-            <label>Image</label>
+            <label className="image-label">Image</label>
+            <img
+              style={{ width: "100px" }}
+              src={this.state.image && this.state.image}
+              alt=""
+            ></img>
             <input
+              id="image-upload"
               name="image"
               type="file"
               onChange={this.handleFileUpload}
             ></input>
             <span>
-              <img
-                style={{ width: "100px" }}
-                src={this.state.image && this.state.image}
-                alt=""
-              ></img>
+
             </span>
 
-            <input
+
+            <button
+              className="form-button"
               type="submit"
-              value="Submit"
               disabled={!this.state.isReady}
-            />
+            >
+              Save
+          </button>
           </form>
-          <button onClick={this.deleteHandler}>Delete</button>
+          <div className="button-container">
+            <button className="delete-button" onClick={this.deleteHandler}>Delete</button>
+          </div>
         </div>
       </div>
     );

@@ -47,6 +47,7 @@ h5 {
 textarea {
   font-size: 1.6rem;
   padding: 5px 0px 5px 5px;
+  border-radius: 5px;
 }
 
 .not-logged-in-link {
@@ -86,31 +87,64 @@ input {
   margin-bottom: 30px;
 }
 
-/* *************************************** */
-/* html,
-body {
-  margin: 0;
-  padding: 0;
+/* MyFavorites and MyPosts pages */
+
+.no-posts {
+  width: 76%;
+  margin: 0 auto;
 }
 
-.App {
-  padding: 20px;
-}
-
-nav.navbar {
+.my-posts-container {
+  height: 776px;
   display: flex;
-  padding: 0px 20px;
-  background: #686de0;
+  flex-direction: column;
 }
 
-button.navbar-button {
-  padding: 5px 20px;
-  width: 100px;
-  margin: 15px 10px;
-  border-radius: 3px;
+.my-posts-header {
+  margin: 20px;
+  width: 90%;
+  text-align: center;
 }
 
-#home-btn {
-  color: white;
-  text-decoration: none;
-} */
+.travel-card {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+}
+
+/* Edit forms */
+
+.edit-form-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 800px;
+  margin: 10px 20px 0px 20px;
+}
+
+.edit-form > label {
+  font-size: 1.6rem;
+}
+
+.edit-form > input {
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 1.6rem;
+}
+
+.image-label {
+  margin: 15px 0 0 0;
+}
+
+#image-upload {
+  border: none;
+}

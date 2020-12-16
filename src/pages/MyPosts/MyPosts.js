@@ -29,11 +29,13 @@ class MyPosts extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="my-posts-container">
+
+      <h1 className="my-posts-header">My Travel Posts</h1>
         {this.state.postsArr && this.state.postsArr.length > 0 ? (
           this.state.postsArr.map((post) => {
             return (
-              <div>
+              <div className="travel-card">
                 <Card post={post} />
                 <Link
                   exact
@@ -45,7 +47,7 @@ class MyPosts extends React.Component {
             );
           })
         ) : (
-          <p>
+          <p className="no-posts">
             You don't have any Travel Posts. Create one{" "}
             <Link exact to={`/createPost`}>
               here!

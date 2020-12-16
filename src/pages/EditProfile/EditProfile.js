@@ -91,7 +91,7 @@ class EditProfile extends React.Component {
     console.log("object", this.props.location.state);
     return (
       <div>
-        <header className="edit-profile-header">
+        <header className="edit-form-header">
           <img
             className="profile-image"
             src={this.state.image}
@@ -100,7 +100,7 @@ class EditProfile extends React.Component {
           <h1>{this.state.name}</h1>
         </header>
 
-        <form className="edit-profile-form" onSubmit={this.handleFormSubmit}>
+        <form className="edit-form" onSubmit={this.handleFormSubmit}>
           <label>Name:</label>
           <input
             type="text"
@@ -159,7 +159,7 @@ class EditProfile extends React.Component {
             type="submit"
             disabled={!this.state.isReady}
           >
-            Submit
+            Save
           </button>
         </form>
         {this.props.location.state.userInfo ? (

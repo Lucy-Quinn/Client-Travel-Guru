@@ -3,7 +3,8 @@ import axios from "axios";
 import Card from "./../../components/Card/Card";
 import { withAuth } from "../../context/auth-context";
 import { Link } from "react-router-dom";
-import './../../App.css'
+import './../../App.css';
+import './MyFavorites.css';
 
 class MyFavorites extends React.Component {
   state = {
@@ -12,14 +13,11 @@ class MyFavorites extends React.Component {
 
   componentDidMount() {
     this.getFavorites();
-
   }
-
 
   getFavorites=()=>{
     const userId = this.props.user._id;
     
-
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/favoritePosts/${userId}`, {
         withCredentials: true,
@@ -46,12 +44,13 @@ class MyFavorites extends React.Component {
 
   render() {
     return (
-      <div>
-      <h1>My Favorite Posts</h1>
+      <div className="my-posts-container">
+
+      <h1 className="my-posts-header">My Favorite Posts</h1>
         {this.state.favoritesArr && this.state.favoritesArr.length > 0 ? (
           this.state.favoritesArr.map((post) => {
             return (
-              <div>
+              <div className="travel-card">
                 <Card post={post} />
                 <button onClick={() => this.deleteHandler(post._id)}>
                   Delete
@@ -60,7 +59,7 @@ class MyFavorites extends React.Component {
             );
           })
         ) : (
-          <p>You don't have any favorites 💔 You can add more favorites by searching for travel posts <Link exact to={`/dashboard`}>here</Link></p>
+          <p className="no-posts">You don't have any favorites 💔 You can add more favorites by searching for travel posts <Link exact to={`/dashboard`}>here</Link></p>
         )}
         <div></div>
       </div>

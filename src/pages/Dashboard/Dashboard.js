@@ -42,7 +42,6 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-
         <header className="header">
           <div className="header-img"></div>
           <div className="header-searchbar">
@@ -52,14 +51,15 @@ class Dashboard extends React.Component {
             />
           </div>
         </header>
-
-        {this.state.search[0] //if there is at least one position in the array
-          ? this.state.search.map((post) => {
-            return <Card post={post} />;
-          })
-          : this.state.postArray.map((post) => {
-            return <Card post={post} />;
-          })}
+        <section className="search-results">
+          {this.state.search[0] //if there is at least one position in the array
+            ? this.state.search.map((post) => {
+                return <Card post={post} />;
+              })
+            : this.state.postArray.map((post) => {
+                return <Card post={post} />;
+              })}
+        </section>
       </div>
     );
   }

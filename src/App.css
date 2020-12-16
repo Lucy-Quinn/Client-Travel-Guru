@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   font-size: 10px;
   font-family: "Roboto";
+  min-height: 100vh;
 }
 
 .buttons {
@@ -17,6 +18,14 @@ body {
   width: 112px;
   height: 60px;
   font-size: 1.6rem;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 10rem;
 }
 
 /* *************************************** */

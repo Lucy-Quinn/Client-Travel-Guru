@@ -23,6 +23,7 @@ import MyFavorites from "./pages/MyFavorites/MyFavorites";
 
 import "./App.css";
 
+
 class App extends Component {
   render() {
 

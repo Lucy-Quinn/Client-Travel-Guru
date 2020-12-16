@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import { Link, NavLink } from "react-router-dom";
 import { withAuth } from "../../context/auth-context";
 import {
   Navbar,
@@ -12,7 +11,13 @@ import {
   Item,
   Divider,
 } from "react-bootstrap";
+
+//css
 import "./Navbar.css";
+//bootstrap css
+import "bootstrap/dist/css/bootstrap.css";
+
+
 
 class OurNavbar extends Component {
   render() {

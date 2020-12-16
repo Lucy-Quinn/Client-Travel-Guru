@@ -3,7 +3,7 @@
 }
 
 .navbar-dark .navbar-brand {
-  font-size: 2.6rem;
+  font-size: 3.3rem;
 }
 
 .navbar-toggler:focus,
@@ -12,11 +12,15 @@
   outline: #fff;
   box-shadow: none;
   border: 1px solid #fff;
+  font-family: "Amatic SC", cursive;
+}
+.navbar {
+  font-family: "Amatic SC", cursive;
 }
 
 .mr-auto,
 .mx-auto {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
 }
 
 /* #collasible-nav-dropdown {
@@ -30,5 +34,5 @@
 }
 .navbar-nav .dropdown-menu > a {
   color: white;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
 }

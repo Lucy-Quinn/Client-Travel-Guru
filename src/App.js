@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
+import AnonRoute from "./components/AnonRoute";
+import PrivateRoute from "./components/PrivateRoute";
+
+//components
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import LandingPage from "./pages/LandingPage/LandingPage";
+
+//pages
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
-
-import AnonRoute from "./components/AnonRoute";
-import PrivateRoute from "./components/PrivateRoute";
 import EditProfile from "./pages/EditProfile/EditProfile";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import PostDetails from "./pages/PostDetails/PostDetails";
 import MyPosts from "./pages/MyPosts/MyPosts";
@@ -21,21 +24,15 @@ import CreateTravelLog from "./pages/CreateTravelLog/CreateTravelLog";
 import DeleteProfileConfirmation from "./pages/DeleteProfileConfirmation/DeleteProfileConfirmation";
 import MyFavorites from "./pages/MyFavorites/MyFavorites";
 
+//css
 import "./App.css";
-
 
 class App extends Component {
   render() {
-
-    console.log('props', this.props)
     return (
       <div>
-
-
         <Navbar />
-
         <Switch>
-
           <AnonRoute exact path="/" component={LandingPage} />
 
           <AnonRoute exact path="/signup" component={Signup} />

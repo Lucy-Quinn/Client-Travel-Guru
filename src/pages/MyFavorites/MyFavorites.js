@@ -52,7 +52,7 @@ class MyFavorites extends React.Component {
             return (
               <div className="travel-card">
                 <Card post={post} />
-                <button onClick={() => this.deleteHandler(post._id)}>
+                <button className="card-button" onClick={() => this.deleteHandler(post._id)}>
                   Delete
                 </button>
               </div>

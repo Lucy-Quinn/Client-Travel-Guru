@@ -1,4 +1,4 @@
-.footer {
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
   color: white;
 }
 
-.footer > p {
+footer > p {
   font-size: 1.4rem;
   font-weight: 300;
 }

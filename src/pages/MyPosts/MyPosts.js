@@ -41,7 +41,7 @@ class MyPosts extends React.Component {
                   exact
                   to={{ pathname: `/editPost/${post._id}`, state: { post } }}
                 >
-                  <button>Edit Post</button>
+                  <button className="card-button">Edit Post</button>
                 </Link>
               </div>
             );

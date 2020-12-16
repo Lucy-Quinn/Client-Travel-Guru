@@ -42,22 +42,25 @@ class TravelLog extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>My Travel Log</h1>
-        <div>
+      <div className="my-travellog-container">
+
+        <header className="my-travellog-header">
+          <h1 >My Travel Log</h1>
           <Link exact to={`/createTravelLog`}>
-            <button>Create Travel Log</button>
+            <button className="form-button">Create Travel Log</button>
           </Link>
-        </div>
-        {this.state.travelLogsArr
-          ? this.state.travelLogsArr.map((travelLog) => {
-            return (
-              <div>
-                <TravelLogCard travelLog={travelLog} deleteHandler={this.deleteHandler} />
-              </div>
-            );
-          })
-          : null}
+        </header>
+        <section >
+          {this.state.travelLogsArr
+            ? this.state.travelLogsArr.map((travelLog) => {
+              return (
+                <div className="travel-log">
+                  <TravelLogCard travelLog={travelLog} deleteHandler={this.deleteHandler} />
+                </div>
+              );
+            })
+            : null}
+        </section>
       </div>
     );
   }

@@ -9,6 +9,9 @@ body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
   color: rgb(53, 52, 52);
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
 }
 
 .buttons {
@@ -87,6 +90,8 @@ input {
   margin-bottom: 30px;
 }
 
+.card-button {
+}
 /* MyFavorites and MyPosts pages */
 
 .no-posts {
@@ -94,20 +99,23 @@ input {
   margin: 0 auto;
 }
 
-.my-posts-container {
+.my-posts-container,
+.my-travellog-container {
   height: 776px;
   display: flex;
   flex-direction: column;
 }
 
-.my-posts-header {
+.my-posts-header,
+.my-travellog-header {
   margin: 20px;
   width: 90%;
   text-align: center;
 }
 
-.travel-card {
-  margin: 0 20px;
+.travel-card,
+.travel-log {
+  margin: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */

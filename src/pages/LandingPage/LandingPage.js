@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./LandingPage.css";
 // import "./../../App.css";
 
-
 function LandingPage() {
   return (
     <div>
@@ -15,11 +14,11 @@ function LandingPage() {
       </header>
       <section className="landing-buttons">
         <Link to={"/signup"}>
-          <button className="buttons">Sign Up</button>
+          <button className="form-button">Sign Up</button>
         </Link>
 
         <Link to={"login"}>
-          <button className="buttons">Login</button>
+          <button className="form-button">Login</button>
         </Link>
       </section>
 

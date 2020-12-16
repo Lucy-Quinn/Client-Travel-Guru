@@ -10,6 +10,7 @@ body {
   font-size: 10px;
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
+  color: rgb(53, 52, 52);
 }
 
 .buttons {
@@ -23,6 +24,7 @@ body {
 
 p {
   font-size: 1.6rem;
+  margin: 0;
 }
 
 h1 {
@@ -35,6 +37,45 @@ h4 {
 
 h5 {
   font-size: 1.8rem;
+}
+
+textarea {
+  font-size: 1.6rem;
+  padding: 5px 0px 5px 5px;
+}
+
+.not-logged-in-link {
+  color: grey;
+  font-weight: 700;
+}
+
+/* Sign Up and Login button */
+.form-button,
+.warning-button {
+  padding: 15px;
+  width: 200px;
+  margin: 30px auto 10px auto;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  border: none;
+  border: 1px solid rgba(128, 128, 128, 0.603);
+  box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.603);
+  letter-spacing: 1px;
+}
+
+.form-button {
+  color: rgb(53, 52, 52);
+  background-color: #70f7c8;
+}
+
+input {
+  padding: 5px 0px 5px 5px;
+}
+
+/* Buttons */
+
+.warning-button {
+  background-color: #f1d484;
 }
 
 /* *************************************** */

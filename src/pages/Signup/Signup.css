@@ -6,7 +6,6 @@ body {
 /*******************************/
 
 .signup-form > input {
-  padding: 5px 0px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 1.6rem;
@@ -38,17 +37,9 @@ body {
 #image-upload {
   border: none;
 }
-input[type="file"] {
+/* input[type="file"] {
   border: none;
-}
-
-.form-button {
-  padding: 15px;
-  width: 200px;
-  margin: 30px auto 10px auto;
-  border-radius: 10px;
-  font-size: 1.6rem;
-}
+} */
 
 .image-label {
   margin: 15px 0px 0px 0px;

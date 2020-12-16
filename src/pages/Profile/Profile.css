@@ -25,18 +25,22 @@ body {
   align-items: center;
 }
 
-.profile-button {
-  width: 150px;
-}
-
 .profile-button,
 .edit-profile-button {
   margin: 5px 0 0 0;
   background-color: #70f7c8;
   border-radius: 10px;
   border: 1px solid grey;
-  padding: 8px 10px;
+  padding: 12px 10px;
   font-size: 1.4rem;
+}
+
+.profile-button {
+  width: 200px;
+}
+
+.edit-profile-button {
+  width: 100px;
 }
 
 .profile-info {

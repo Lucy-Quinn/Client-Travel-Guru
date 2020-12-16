@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { withAuth } from '../../context/auth-context';
+import { withAuth } from "../../context/auth-context";
 import axios from "axios";
 import "./Signup.css";
-
 
 class Signup extends Component {
   state = {
@@ -12,19 +11,19 @@ class Signup extends Component {
     email: "",
     password: "",
     image: "",
-    imageReady: false
+    imageReady: false,
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     const { name, username, email, password, image } = this.state;
     if (image) {
-      this.props.signup(name, username, email, password, image)
+      this.props.signup(name, username, email, password, image);
     } else {
       this.props.signup(name, username, email, password);
     }
@@ -40,16 +39,13 @@ class Signup extends Component {
     uploadData.append("image", file);
 
     axios
-      .post(
-        `${process.env.REACT_APP_API_URL}/auth/upload`,
-        uploadData,
-        { withCredentials: true }
-      )
+      .post(`${process.env.REACT_APP_API_URL}/auth/upload`, uploadData, {
+        withCredentials: true,
+      })
       .then((response) => {
         // console.log("response is: ", response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state
         this.setState({ image: response.data.secure_url, isReady: true });
-
       })
       .catch((err) => {
         console.log("Error while uploading the file: ", err);
@@ -61,33 +57,70 @@ class Signup extends Component {
     return (
       <div>
         <div className="signup-header">
-
           <h1>Sign Up</h1>
         </div>
 
         <form className="signup-form" onSubmit={this.handleFormSubmit}>
-
           <label>Name:</label>
-          <input type="text" name="name" value={name} onChange={this.handleChange} />
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={this.handleChange}
+          />
 
           <label>Username:</label>
-          <input type="text" name="username" value={username} onChange={this.handleChange} />
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={this.handleChange}
+          />
 
           <label>Email:</label>
-          <input type="text" name="email" value={email} onChange={this.handleChange} />
+          <input
+            type="text"
+            name="email"
+            value={email}
+            onChange={this.handleChange}
+          />
 
           <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.handleChange}
+          />
 
           <label className="image-label">Image:</label>
-          <input id="image-upload" type="file" onChange={this.handleFileUpload} />
+          <img
+            style={{ width: "100px" }}
+            src={this.state.image && this.state.image}
+            alt=""
+          ></img>
+          <input
+            id="image-upload"
+            type="file"
+            onChange={this.handleFileUpload}
+          />
 
-          <button className="form-button" type="submit" value="Signup" disabled={!this.state.isReady} >Sign Up</button>
+          <button
+            className="form-button"
+            type="submit"
+            value="Signup"
+            disabled={!this.state.isReady}
+          >
+            Sign Up
+          </button>
         </form>
 
         <div className="existing-account">
           <h4>Already have an account?</h4>
-          <Link to={"/login"}> <h5>Login</h5></Link>
+          <Link className="not-logged-in-link" to={"/login"}>
+            {" "}
+            <h5>Login</h5>
+          </Link>
         </div>
       </div>
     );

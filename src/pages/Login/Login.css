@@ -4,12 +4,11 @@ body {
 }
 
 .login-container {
-  height: 100vh;
+  height: 767px;
 }
 /*******************************/
 
 .login-form > input {
-  padding: 5px 0px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 1.6rem;

@@ -83,10 +83,6 @@ class PostDetails extends React.Component {
       updated_at
     } = this.state.postDetails;
 
-
-
-
-
     return (
       <div>
         <h1>{title}</h1>

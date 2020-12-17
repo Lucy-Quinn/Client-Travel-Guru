@@ -30,7 +30,7 @@ import "./App.css";
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="full-page">
         <Navbar />
         <Switch>
           <AnonRoute exact path="/" component={LandingPage} />

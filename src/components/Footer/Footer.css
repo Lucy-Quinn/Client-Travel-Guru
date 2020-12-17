@@ -4,7 +4,7 @@ footer {
   align-items: center;
   background-color: #343a40;
   height: 50px;
-  position: sticky;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;

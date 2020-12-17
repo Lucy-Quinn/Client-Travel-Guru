@@ -4,5 +4,6 @@ body {
 }
 
 .my-posts-container {
-  min-height: 100vh;
+  /* height: auto; */
+  position: relative;
 }

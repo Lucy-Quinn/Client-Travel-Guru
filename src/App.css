@@ -9,11 +9,17 @@ body {
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
   color: rgb(53, 52, 52);
+  position: relative;
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
 }
 
+.full-page {
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+}
 .buttons {
   padding: 10px 20px;
   border-radius: 10px;
@@ -132,7 +138,7 @@ input {
 
 .my-posts-container,
 .my-travellog-container {
-  height: 776px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }

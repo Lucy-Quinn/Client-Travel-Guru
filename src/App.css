@@ -197,4 +197,5 @@ input {
 
 #image-upload {
   border: none;
+  overflow: hidden;
 }

@@ -1,12 +1,12 @@
 body {
   height: 100vh;
   width: 100vw;
+  min-height: 100vh;
 }
 
 .header {
   background: center, url("./../../images/header-img.jpg"), no-repeat,
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  /* filter: brightness(70%); */
   background-size: cover;
   height: 373px;
   width: 100%;
@@ -20,7 +20,6 @@ body {
   filter: brightness(100%);
   text-shadow: 3px 3px 5px rgb(61, 59, 59);
   font-family: "Amatic SC", cursive;
-
   font-size: 6rem;
 }
 
@@ -38,7 +37,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 45px;
+  /* margin-bottom: 45px; */
 }
 
 .about-us {
@@ -48,9 +47,36 @@ body {
   align-items: center;
   text-align: justify;
   margin: 10px 0 25px 0;
-  height: 17rem;
+  height: 250px;
 }
 
-.about-us > p {
-  padding: 20px 20px;
+.about-us > h4 {
+  margin: 20px 0;
+}
+
+.about-us-text {
+  padding: 0px 20px;
+}
+
+.about-us-text p:nth-child(3) {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    height: 532px;
+  }
+  .about-us-text {
+    padding: 20px 55px;
+  }
+  .landing-buttons {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .landing-buttons {
+    height: 160px;
+  }
+}
+@media (min-width: 768px) {
 }

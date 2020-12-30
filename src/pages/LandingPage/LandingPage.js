@@ -24,13 +24,16 @@ function LandingPage() {
 
       <section className="about-us">
         <h4>What is Travel Guru?</h4>
-        <p>
-          Have you ever been on holiday and forgotten where you have been
-          exactly and what you have done? Also, looking for some inspiration?
-          Join our community and search for travel ideas and keep a record of
-          all your travel memories. Travel experiences should never be
+        <div className="about-us-text">
+          <p>
+            Have you ever been on holiday and forgotten where you have been
+            exactly and what you have done? Also, looking for some travel inspiration?</p>
+          <p>Join our community and search for travel ideas and keep a record of
+          all your travel memories. </p>
+          <p>Travel experiences should never be
           forgotten!
-        </p>
+          </p>
+        </div>
       </section>
     </div>
   );

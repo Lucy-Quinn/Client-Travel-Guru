@@ -40,7 +40,6 @@ class PostDetails extends React.Component {
   handleFavorite = () => {
     const { postId } = this.props.match.params;
     const userId = this.props.user._id;
-    console.log('usr', userId);
 
     axios
       .post(
@@ -57,6 +56,7 @@ class PostDetails extends React.Component {
 
 
   handleFormSubmit = (description) => {
+
     const { postId } = this.props.match.params;
     axios
       .post(

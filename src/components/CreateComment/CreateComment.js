@@ -10,16 +10,26 @@ class CreateComment extends React.Component {
   };
 
   handleChange = (event) => {
+
+    // event.preventDefault();
+
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+
+    this.props.handleFormSubmit(this.state.description)
+  }
 
   render() {
     return (
       <div>
         <form className="comment-form"
-          onSubmit={() => this.props.handleFormSubmit(this.state.description)}>
+          onSubmit={this.handleFormSubmit}>
+          {/* onSubmit={() => this.props.handleFormSubmit(this.state.description)}> */}
+
           <textarea
             name="description"
             value={this.state.description}

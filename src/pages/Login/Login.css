@@ -6,7 +6,6 @@ body {
 .login-container {
   height: 767px;
 }
-/*******************************/
 
 .login-form > input {
   border-radius: 5px;
@@ -21,7 +20,6 @@ body {
 .login-header > h1 {
   font-size: 4rem;
 }
-/*******************************/
 
 .login-header {
   display: flex;

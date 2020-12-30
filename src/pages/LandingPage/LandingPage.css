@@ -37,7 +37,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 45px; */
 }
 
 .about-us {
@@ -73,10 +72,23 @@ body {
   .landing-buttons {
     flex-direction: row;
     justify-content: space-evenly;
-  }
-  .landing-buttons {
     height: 160px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
+  .header {
+    height: 650px;
+  }
+  .header-title > h1 {
+    font-size: 8.5rem;
+  }
+  .header-title {
+    width: 400px;
+  }
+  .about-us {
+    height: 200px;
+  }
+  .about-us h4 {
+    font-size: 2.8rem;
+  }
 }

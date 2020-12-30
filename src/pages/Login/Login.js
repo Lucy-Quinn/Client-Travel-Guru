@@ -24,39 +24,41 @@ class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div className="login-container">
-        <div className="login-header">
-          <h1>Login</h1>
-        </div>
-
-        <form className="login-form" onSubmit={this.handleFormSubmit}>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={this.handleChange}
-          />
-
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-
-          <button className="form-button" type="submit" value="Login">
-            Login
-          </button>
-
-          <div className="existing-account">
-            <h4>Don't have an account?</h4>
-            <Link className="not-logged-in-link" exact to="/signup">
-              <h5>Sign Up</h5>
-            </Link>
+      <div className="sign-up-login-background">
+        <div className="sign-up-login-body">
+          <div className="login-header">
+            <h1>Login</h1>
           </div>
-        </form>
+
+          <form className="login-form" onSubmit={this.handleFormSubmit}>
+            <label>Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={username}
+              onChange={this.handleChange}
+            />
+
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
+
+            <button className="form-button" type="submit" value="Login">
+              Login
+            </button>
+
+            <div className="existing-account">
+              <h4>Don't have an account?</h4>
+              <Link className="not-logged-in-link" exact to="/signup">
+                <h5>Sign Up</h5>
+              </Link>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

@@ -199,3 +199,33 @@ input {
   border: none;
   overflow: hidden;
 }
+
+/* sign up and login  */
+.sign-up-login-background {
+  background: linear-gradient(267deg, #70f7c8, #ffffff);
+  padding: 20px;
+}
+
+.sign-up-login-body {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px 0px rgba(73, 70, 70, 0.685);
+  border-radius: 10px;
+  opacity: 0.8;
+}
+@media (min-width: 768px) {
+  .sign-up-login-body {
+    margin: 20px 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sign-up-login-body {
+    margin: 20px 155px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sign-up-login-body {
+    margin: 20px 300px;
+  }
+}

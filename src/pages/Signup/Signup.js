@@ -55,72 +55,74 @@ class Signup extends Component {
   render() {
     const { name, username, email, password, image } = this.state;
     return (
-      <div>
-        <div className="signup-header">
-          <h1>Sign Up</h1>
-        </div>
+      <div className="sign-up-login-background">
+        <div className="sign-up-login-body">
+          <div className="signup-header">
+            <h1>Sign Up</h1>
+          </div>
 
-        <form className="signup-form" onSubmit={this.handleFormSubmit}>
-          <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={name}
-            onChange={this.handleChange}
-          />
+          <form className="signup-form" onSubmit={this.handleFormSubmit}>
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={name}
+              onChange={this.handleChange}
+            />
 
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={this.handleChange}
-          />
+            <label>Username:</label>
+            <input
+              type="text"
+              name="username"
+              value={username}
+              onChange={this.handleChange}
+            />
 
-          <label>Email:</label>
-          <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
+            <label>Email:</label>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={this.handleChange}
+            />
 
-          <label>Password:</label>
-          <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={this.handleChange}
+            />
 
-          <label className="image-label">Image:</label>
-          <img
-            style={{ width: "100px" }}
-            src={this.state.image && this.state.image}
-            alt=""
-          ></img>
-          <input
-            id="image-upload"
-            type="file"
-            onChange={this.handleFileUpload}
-          />
+            <label className="image-label">Image:</label>
+            <img
+              style={{ width: "100px" }}
+              src={this.state.image && this.state.image}
+              alt=""
+            ></img>
+            <input
+              id="image-upload"
+              type="file"
+              onChange={this.handleFileUpload}
+            />
 
-          <button
-            className="form-button"
-            type="submit"
-            value="Signup"
-            disabled={!this.state.isReady}
-          >
-            Sign Up
-          </button>
-        </form>
+            <button
+              className="form-button"
+              type="submit"
+              value="Signup"
+              disabled={!this.state.isReady}
+            >
+              Sign Up
+            </button>
+          </form>
 
-        <div className="existing-account">
-          <h4>Already have an account?</h4>
-          <Link className="not-logged-in-link" to={"/login"}>
-            {" "}
-            <h5>Login</h5>
-          </Link>
+          <div className="existing-account">
+            <h4>Already have an account?</h4>
+            <Link className="not-logged-in-link" to={"/login"}>
+              {" "}
+              <h5>Login</h5>
+            </Link>
+          </div>
         </div>
       </div>
     );

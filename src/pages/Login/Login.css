@@ -4,7 +4,7 @@ body {
 }
 
 .login-container {
-  height: 767px;
+  /* height: 767px; */
 }
 
 .login-form > input {
@@ -31,6 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 523px;
-  margin: 10px 20px;
+  /* height: 523px; */
+  min-height: 100vh;
+  margin: 0px 20px;
 }

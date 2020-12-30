@@ -28,7 +28,7 @@ class OurNavbar extends Component {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           {this.props.isLoggedIn ? (
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
               <Nav.Link href="/dashboard">Search</Nav.Link>
               <Nav.Link href={`/profile/${this.props.user._id}`}>
                 Profile
@@ -51,7 +51,7 @@ class OurNavbar extends Component {
               </Nav.Link> */}
             </Nav>
           ) : (
-              <Nav className="mr-auto">
+              <Nav className="ml-auto">
                 <Nav.Link href="/signup">Sign Up</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
               </Nav>

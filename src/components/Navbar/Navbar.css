@@ -23,10 +23,6 @@
   font-size: 2.5rem;
 }
 
-/* #collasible-nav-dropdown {
-  background-color: #343a40;
-} */
-
 .navbar-nav .dropdown-menu {
   background-color: #343a40;
   border: none;
@@ -34,5 +30,8 @@
 }
 .navbar-nav .dropdown-menu > a {
   color: white;
+  font-size: 2.5rem;
+}
+.ml-auto {
   font-size: 2.5rem;
 }

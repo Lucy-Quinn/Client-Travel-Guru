@@ -3,6 +3,7 @@ import axios from "axios";
 import Card from "./../../components/Card/Card";
 import { withAuth } from "../../context/auth-context";
 import { Link } from "react-router-dom";
+import './MyPosts.css';
 
 class MyPosts extends React.Component {
   state = {

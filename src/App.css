@@ -23,7 +23,7 @@ body {
 .buttons {
   padding: 10px 20px;
   border-radius: 10px;
-  box-shadow: 3px 3px 5px rgba(163, 156, 156, 0.76);
+  box-shadow: 3px 3px 5px rgba(175, 169, 169, 0.76);
   width: 112px;
   height: 60px;
   font-size: 1.6rem;
@@ -127,6 +127,7 @@ input {
   border: 1px solid rgba(128, 128, 128, 0.603);
   box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.603);
   letter-spacing: 1px;
+  margin: 0 auto;
 }
 
 .edit-card-button {
@@ -138,8 +139,8 @@ input {
   background-color: #f86464;
   color: whitesmoke;
 }
-/* MyFavorites and MyPosts pages */
 
+/* MyFavorites and MyPosts pages */
 .no-posts {
   width: 76%;
   margin: 0 auto;
@@ -155,7 +156,6 @@ input {
 .my-posts-header,
 .my-travellog-header {
   margin: 20px;
-  width: 90%;
   text-align: center;
 }
 

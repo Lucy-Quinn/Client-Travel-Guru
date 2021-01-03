@@ -44,10 +44,23 @@ body {
 }
 
 .profile-info {
-  height: 280px;
+  /* height: 280px; */
   margin-top: 30px;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .profile-info {
+    align-items: center;
+  }
+  .profile-info p {
+    margin: 10px 0;
+  }
+
+  .profile-info p:last-child {
+    font-style: italic;
+  }
 }

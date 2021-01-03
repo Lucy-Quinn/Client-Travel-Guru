@@ -5,7 +5,7 @@ body {
 
 .post-header > h1 {
   margin: 20px;
-  width: 90%;
+  /* width: 90%; */
   text-align: center;
 }
 #post-image {
@@ -50,5 +50,13 @@ body {
 @media (min-width: 768px) {
   .post-info {
     margin: 0 30px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .post-header,
+  .post-info {
+    width: 80%;
+    margin: 0 auto;
   }
 }

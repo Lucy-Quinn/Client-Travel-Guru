@@ -22,3 +22,9 @@
   letter-spacing: 1px;
   background-color: #70f7c8;
 }
+
+@media (min-width: 768px) {
+  .comment-form > textarea {
+    width: 400px;
+  }
+}

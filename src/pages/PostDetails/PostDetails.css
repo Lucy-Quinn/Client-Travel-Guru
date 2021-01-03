@@ -46,3 +46,9 @@ body {
   font-style: italic;
   font-weight: 500;
 }
+
+@media (min-width: 768px) {
+  .post-info {
+    margin: 0 30px;
+  }
+}

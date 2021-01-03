@@ -4,15 +4,50 @@
   border-radius: 10px;
   padding: 20px;
   margin: 20px auto;
+  box-shadow: 3px 3px 5px rgba(163, 156, 156, 0.76);
 }
 
-.comment-container p:first-child {
+.comment-author-name {
   font-weight: 700;
-  margin-bottom: 10px;
+  margin: 0 0 10px 10px;
 }
 
 .comment-text {
   width: 250px;
-  margin: 5px;
   word-wrap: break-word;
+}
+
+.comment-author-container {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px 0;
+}
+.comment-author-container img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+  .comment-text {
+    width: 563px;
+    margin: 0;
+  }
+  .comment-container {
+    width: 78%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .comment-container {
+    width: 59%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .comment-text {
+    width: 693px;
+  }
+  .comment-container {
+    width: 51%;
+  }
 }

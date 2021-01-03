@@ -208,7 +208,17 @@ input {
   border: none;
   overflow: hidden;
 }
+@media (min-width: 1024px) {
+  .edit-form {
+    margin: 10px 100px 0px 100px;
+  }
+}
 
+@media (min-width: 1440px) {
+  .edit-form {
+    margin: 10px 200px 0px 200px;
+  }
+}
 /* sign up and login  */
 .sign-up-login-background {
   background: linear-gradient(267deg, #70f7c8, #ffffff);

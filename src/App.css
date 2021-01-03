@@ -97,6 +97,15 @@ textarea {
   background-color: #70f7c8;
 }
 
+button:disabled,
+button[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+.asterisk {
+  color: red;
+}
 input {
   padding: 5px 0px 5px 5px;
 }

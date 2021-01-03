@@ -66,7 +66,7 @@ class CreatePost extends React.Component {
         </header>
         <div>
           <form className="edit-form post-form-height" onSubmit={this.handleFormSubmit}>
-            <label>Title:</label>
+            <label>Title: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="title"
@@ -75,7 +75,7 @@ class CreatePost extends React.Component {
               required
             />
 
-            <label>Country:</label>
+            <label>Country: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="country"
@@ -84,7 +84,7 @@ class CreatePost extends React.Component {
               required
             />
 
-            <label>City:</label>
+            <label>City: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="city"
@@ -93,7 +93,7 @@ class CreatePost extends React.Component {
               required
             />
 
-            <label>Description:</label>
+            <label>Description: <span className="asterisk">*</span></label>
             <textarea
               name="description"
               value={this.state.description}
@@ -101,7 +101,7 @@ class CreatePost extends React.Component {
               required
             />
 
-            <label className="image-label">Image</label>
+            <label className="image-label">Image: <span className="asterisk">*</span></label>
 
             <span>
               <img

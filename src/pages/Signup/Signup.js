@@ -11,7 +11,7 @@ class Signup extends Component {
     email: "",
     password: "",
     image: "",
-    imageReady: false,
+    isReady: false
   };
 
   handleChange = (event) => {
@@ -62,39 +62,43 @@ class Signup extends Component {
           </div>
 
           <form className="signup-form" onSubmit={this.handleFormSubmit}>
-            <label>Name:</label>
+            <label>Name: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="name"
               value={name}
               onChange={this.handleChange}
+              required
             />
 
-            <label>Username:</label>
+            <label>Username: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="username"
               value={username}
               onChange={this.handleChange}
+              required
             />
 
-            <label>Email:</label>
+            <label>Email: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="email"
               value={email}
               onChange={this.handleChange}
+              required
             />
 
-            <label>Password:</label>
+            <label>Password: <span className="asterisk">*</span></label>
             <input
               type="password"
               name="password"
               value={password}
               onChange={this.handleChange}
+              required
             />
 
-            <label className="image-label">Image:</label>
+            <label className="image-label">Image: <span className="asterisk">*</span></label>
             <img
               style={{ width: "100px" }}
               src={this.state.image && this.state.image}
@@ -104,6 +108,7 @@ class Signup extends Component {
               id="image-upload"
               type="file"
               onChange={this.handleFileUpload}
+              required
             />
 
             <button

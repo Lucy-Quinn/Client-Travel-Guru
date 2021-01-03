@@ -31,7 +31,7 @@ class Login extends Component {
           </div>
 
           <form className="login-form" onSubmit={this.handleFormSubmit}>
-            <label>Username:</label>
+            <label>Username: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="username"
@@ -39,7 +39,7 @@ class Login extends Component {
               onChange={this.handleChange}
             />
 
-            <label>Password:</label>
+            <label>Password: <span className="asterisk">*</span></label>
             <input
               type="password"
               name="password"

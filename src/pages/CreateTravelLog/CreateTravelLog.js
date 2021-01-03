@@ -46,7 +46,7 @@ class CreateTravelLog extends React.Component {
 
         <div>
           <form className="edit-form travel-log-form-height" onSubmit={this.handleFormSubmit}>
-            <label>Title:</label>
+            <label>Title: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="title"
@@ -55,7 +55,7 @@ class CreateTravelLog extends React.Component {
               required
             />
 
-            <label>Country:</label>
+            <label>Country: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="country"
@@ -64,7 +64,7 @@ class CreateTravelLog extends React.Component {
               required
             />
 
-            <label>City:</label>
+            <label>City: <span className="asterisk">*</span></label>
             <input
               type="text"
               name="city"
@@ -73,7 +73,7 @@ class CreateTravelLog extends React.Component {
               required
             />
 
-            <label>Description:</label>
+            <label>Description: <span className="asterisk">*</span></label>
             <textarea
               name="description"
               value={this.state.description}
@@ -81,15 +81,6 @@ class CreateTravelLog extends React.Component {
               required
             />
             <input className="form-button" type="submit" value="Save" />
-            {/* <button
-              className="form-button"
-              type="submit"
-              value="submit"
-              disabled={!this.state.isReady}
-            >
-              Save
-          </button> */}
-
           </form>
           <div className="button-container">
             <Link exact to={`/travelLogs`}>

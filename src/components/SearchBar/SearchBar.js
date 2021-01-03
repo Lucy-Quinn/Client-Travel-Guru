@@ -14,7 +14,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <div className="searchbar">
-                <input type="text" placeholder="Search by Country/City..." name="search" value={this.state.search} onChange={this.handleSearch} />
+                <input type="text" placeholder="Search Travel Post by Country/City..." name="search" value={this.state.search} onChange={this.handleSearch} />
             </div>
         )
     }

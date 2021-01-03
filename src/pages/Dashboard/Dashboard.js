@@ -9,7 +9,6 @@ class Dashboard extends React.Component {
   state = {
     postArray: [],
     search: [],
-    // searchCity: []
   };
 
   componentDidMount() {
@@ -18,8 +17,6 @@ class Dashboard extends React.Component {
         withCredentials: true,
       })
       .then((response) => {
-        // console.log('response', response.data);
-
         this.setState({ postArray: response.data });
       })
       .catch((err) => console.log(err));
@@ -33,9 +30,6 @@ class Dashboard extends React.Component {
       const city = post.city.toLowerCase();
       return country.includes(searchInput) || city.includes(searchInput);
     });
-    // const foundCity = postArray.filter((post) => {
-    //     return post.city === postSearchInput
-    // });
     this.setState({ search: filteredSearch });
   };
 
@@ -54,11 +48,11 @@ class Dashboard extends React.Component {
         <section className="search-results">
           {this.state.search[0] //if there is at least one position in the array
             ? this.state.search.map((post) => {
-                return <Card post={post} />;
-              })
+              return <Card post={post} />;
+            })
             : this.state.postArray.map((post) => {
-                return <Card post={post} />;
-              })}
+              return <Card post={post} />;
+            })}
         </section>
       </div>
     );

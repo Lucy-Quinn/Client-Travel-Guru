@@ -8,7 +8,7 @@ class Comment extends React.Component {
         return (
             <div className="comment-container">
                 <p>{this.props.postDetails.commentAuthor.username}</p>
-                <p>{this.props.postDetails.description}</p>
+                <p className="comment-text">{this.props.postDetails.description}</p>
             </div>
         )
     }

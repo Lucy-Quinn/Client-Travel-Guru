@@ -26,6 +26,8 @@ class CreateComment extends React.Component {
           onSubmit={this.handleFormSubmit}>
           <textarea
             name="description"
+            rows="4" cols="50"
+            maxLength="250"
             value={this.state.description}
             onChange={this.handleChange}
           />

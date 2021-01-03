@@ -10,3 +10,9 @@
   font-weight: 700;
   margin-bottom: 10px;
 }
+
+.comment-text {
+  width: 250px;
+  margin: 5px;
+  word-wrap: break-word;
+}

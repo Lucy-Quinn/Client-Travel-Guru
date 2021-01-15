@@ -22,7 +22,6 @@ class TravelLog extends React.Component {
         { withCredentials: true }
       )
       .then((response) => {
-        console.log("reponse", response);
         const travelLogsArr = response.data;
         this.setState({ travelLogsArr });
       })
@@ -35,8 +34,7 @@ class TravelLog extends React.Component {
         `${process.env.REACT_APP_API_URL}/api/deleteTravelLog/${travelLogId}`,
         { withCredentials: true }
       )
-      .then((response) => {
-        console.log("reponse", response);
+      .then(() => {
         this.getTravelLogs();
       })
       .catch((err) => console.log(err));
@@ -45,13 +43,13 @@ class TravelLog extends React.Component {
   render() {
     return (
       <div className="my-travellog-container">
-
         <header className="my-travellog-header">
           <h1 >My Travel Log</h1>
           <Link exact to={`/createTravelLog`}>
             <button className="form-button">Create Travel Log</button>
           </Link>
         </header>
+        
         <section >
           {this.state.travelLogsArr && this.state.travelLogsArr.length > 0  
             ? this.state.travelLogsArr.map((travelLog) => {

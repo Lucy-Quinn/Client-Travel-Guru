@@ -16,7 +16,6 @@ class EditPost extends React.Component {
 
   componentDidMount() {
     const { postId } = this.props.match.params;
-
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/post/${postId}`, {
         withCredentials: true,
@@ -40,6 +39,7 @@ class EditPost extends React.Component {
   };
 
   handleFormSubmit = (event) => {
+
     event.preventDefault();
     const { title, country, city, description, image } = this.state;
     const { postId } = this.props.match.params;
@@ -57,14 +57,12 @@ class EditPost extends React.Component {
   };
 
   handleFileUpload = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files);
-    const file = e.target.files[0];
 
+    const file = e.target.files[0];
     const uploadData = new FormData();
     // image => this name has to be the same as in the model since we pass
     // req.body to .create() method when creating a new project in '/api/projects' POST route
     uploadData.append("image", file);
-
     this.setState({ isReady: false }, () => {
 
       axios
@@ -72,7 +70,6 @@ class EditPost extends React.Component {
           withCredentials: true,
         })
         .then((response) => {
-          console.log("response is: ", response);
           // after the console.log we can see that response carries 'secure_url' which we can use to update the state
           // this.setState({ image: response.data.secure_url });
           this.setState({ image: response.data.secure_url, isReady: true });
@@ -84,13 +81,13 @@ class EditPost extends React.Component {
   };
 
   deleteHandler = () => {
+
     const { postId } = this.props.match.params;
     const userId = this.props.user._id;
 
     axios
       .delete(`${process.env.REACT_APP_API_URL}/api/deletePost/${postId}`, { withCredentials: true })
-      .then((response) => {
-        console.log("reponse", response);
+      .then(() => {
         this.props.history.push(`/myPosts/${userId}`)
       })
       .catch((err) => console.log(err));
@@ -102,6 +99,7 @@ class EditPost extends React.Component {
         <header className="edit-form-header">
           <h2>Edit Post</h2>
         </header>
+
         <div>
           <form className="edit-form" onSubmit={this.handleFormSubmit}>
             <label>Title:</label>
@@ -147,16 +145,11 @@ class EditPost extends React.Component {
               type="file"
               onChange={this.handleFileUpload}
             ></input>
-            <span>
-
-            </span>
-
 
             <button
               className="form-button"
               type="submit"
               value="Submit"
-
               disabled={!this.state.isReady}
             >
               Save

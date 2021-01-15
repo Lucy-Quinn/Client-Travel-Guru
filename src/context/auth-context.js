@@ -39,7 +39,6 @@ class AuthProvider extends React.Component {
       .catch((err) => console.log(err));
   }
 
-
   render() {
     const { isLoggedIn, isLoading, user } = this.state;
     const { signup, login, logout } = this;
@@ -54,17 +53,14 @@ class AuthProvider extends React.Component {
   }
 }
 
-
 // HOC that converts regular component into a Consumer
 const withAuth = (WrappedComponent) => {
-
   return class extends React.Component {
     render() {
       return (
         <Consumer>
           { (value) => {
             const { isLoggedIn, isLoading, user, signup, login, logout } = value;
-
             return (<WrappedComponent
               {...this.props}
               isLoggedIn={isLoggedIn}
@@ -74,13 +70,11 @@ const withAuth = (WrappedComponent) => {
               login={login}
               logout={logout}
             />)
-
           }}
         </Consumer>
       )
     }
   }
 }
-
 
 export { AuthProvider, withAuth }

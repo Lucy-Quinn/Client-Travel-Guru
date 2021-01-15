@@ -13,7 +13,6 @@ class Card extends React.Component {
                         <div className="travel-card-title">
                             <h2>{this.props.post.title}</h2>
                         </div>
-
                         <div className="location-info">
                             <h4>{this.props.post.country}</h4>
                             <h5>{this.props.post.city}</h5>

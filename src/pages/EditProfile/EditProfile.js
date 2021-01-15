@@ -33,7 +33,6 @@ class EditProfile extends React.Component {
   }
 
   handleChange = (event) => {
-    // console.log('TARGEETTT', event.target)
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
@@ -62,9 +61,8 @@ class EditProfile extends React.Component {
   };
 
   handleFileUpload = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files);
-    const file = e.target.files[0];
 
+    const file = e.target.files[0];
     const uploadData = new FormData();
     // image => this name has to be the same as in the model since we pass
     // req.body to .create() method when creating a new project in '/api/projects' POST route
@@ -76,7 +74,6 @@ class EditProfile extends React.Component {
           withCredentials: true,
         })
         .then((response) => {
-          console.log("response is: ", response);
           // after the console.log we can see that response carries 'secure_url' which we can use to update the state
           // this.setState({ image: response.data.secure_url });
           this.setState({ image: response.data.secure_url, isReady: true });
@@ -88,7 +85,6 @@ class EditProfile extends React.Component {
   };
 
   render() {
-    console.log("object", this.props.location.state);
     return (
       <div>
         <header className="edit-form-header">
@@ -158,7 +154,6 @@ class EditProfile extends React.Component {
             className="form-button"
             type="submit"
             value="Submit"
-
             disabled={!this.state.isReady}
           >
             Save

@@ -3,13 +3,7 @@ import { withAuth } from "../../context/auth-context";
 import {
   Navbar,
   Nav,
-  Link,
-  NavDropdown,
-  Collapse,
-  Brand,
-  Toggle,
-  Item,
-  Divider,
+  NavDropdown
 } from "react-bootstrap";
 
 //css
@@ -17,11 +11,8 @@ import "./Navbar.css";
 //bootstrap css
 import "bootstrap/dist/css/bootstrap.css";
 
-
-
 class OurNavbar extends Component {
   render() {
-    //const { user, logout, isLoggedin } = this.props;
     return (
       <Navbar className="ourNavbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">Travel Guru</Navbar.Brand>
@@ -46,9 +37,6 @@ class OurNavbar extends Component {
               </Nav.Link>
               <Nav.Link href="/travelLogs">My Travel Log</Nav.Link>
               <Nav.Link onClick={this.props.logout}>Logout</Nav.Link>
-              {/* <Nav.Link className="welcome-user" href="#">
-                Welcome {this.props.user && this.props.user.username}
-              </Nav.Link> */}
             </Nav>
           ) : (
               <Nav className="ml-auto">

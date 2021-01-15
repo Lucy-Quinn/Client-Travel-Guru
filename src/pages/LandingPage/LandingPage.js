@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
-// import "./../../App.css";
 
 function LandingPage() {
   return (
@@ -12,6 +11,7 @@ function LandingPage() {
           <h1>Travel Guru</h1>
         </div>
       </header>
+
       <section className="landing-buttons">
         <Link to={"/signup"}>
           <button className="form-button">Sign Up</button>

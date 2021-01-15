@@ -21,8 +21,6 @@ class CreatePost extends React.Component {
     event.preventDefault();
     const { title, country, city, description, image } = this.state;
     const { userId } = this.props.match.params;
-    console.log("userId", this.props);
-
     axios
       .post(
         `${process.env.REACT_APP_API_URL}/api/createPost`,
@@ -36,9 +34,8 @@ class CreatePost extends React.Component {
   };
 
   handleFileUpload = (e) => {
-    console.log("The file to be uploaded is: ", e.target.files);
-    const file = e.target.files[0];
 
+    const file = e.target.files[0];
     const uploadData = new FormData();
     // image => this name has to be the same as in the model since we pass
     // req.body to .create() method when creating a new project in '/api/projects' POST route
@@ -48,9 +45,7 @@ class CreatePost extends React.Component {
       .post(`${process.env.REACT_APP_API_URL}/api/upload`, uploadData,
         { withCredentials: true })
       .then((response) => {
-        console.log("response is: ", response);
         // after the console.log we can see that response carries 'secure_url' which we can use to update the state
-        // this.setState({ image: response.data.secure_url });
         this.setState({ image: response.data.secure_url, isReady: true });
       })
       .catch((err) => {
@@ -64,6 +59,7 @@ class CreatePost extends React.Component {
         <header className="edit-form-header">
           <h1>Create a Post</h1>
         </header>
+
         <div>
           <form className="edit-form post-form-height" onSubmit={this.handleFormSubmit}>
             <label>Title: <span className="asterisk">*</span></label>

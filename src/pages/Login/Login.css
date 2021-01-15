@@ -3,10 +3,6 @@ body {
   width: 100vw;
 }
 
-.login-container {
-  /* height: 767px; */
-}
-
 .login-form > input {
   border-radius: 5px;
   border: 1px solid gray;
@@ -31,7 +27,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  /* height: 523px; */
   min-height: 100vh;
   margin: 0px 20px;
 }

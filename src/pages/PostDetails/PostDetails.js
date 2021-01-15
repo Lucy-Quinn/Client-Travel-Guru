@@ -36,8 +36,8 @@ class PostDetails extends React.Component {
       .catch((err) => console.log(err));
   }
 
-
   handleFavorite = () => {
+
     const { postId } = this.props.match.params;
     const userId = this.props.user._id;
 
@@ -46,17 +46,13 @@ class PostDetails extends React.Component {
         `${process.env.REACT_APP_API_URL}/api/favoritePost/add/${postId}/${userId}`,
         { withCredentials: true }
       )
-      .then((response) => {
-        console.log('response comment', response);
+      .then(() => {
         this.props.history.push(`/favoritePosts/${this.props.user._id}`)
       })
       .catch((err) => console.log(err));
   };
 
-
-
   handleFormSubmit = (description) => {
-
     const { postId } = this.props.match.params;
     axios
       .post(
@@ -64,8 +60,7 @@ class PostDetails extends React.Component {
         { description },
         { withCredentials: true }
       )
-      .then((response) => {
-        console.log('response', response);
+      .then(() => {
         this.getPost();
       })
       .catch((err) => console.log(err));
@@ -81,8 +76,7 @@ class PostDetails extends React.Component {
       image,
       country,
       city,
-      description,
-      updated_at
+      description
     } = this.state.postDetails;
 
     return (
@@ -104,16 +98,15 @@ class PostDetails extends React.Component {
           <div className="post-author">
             <p>{this.state.postDetails.updated_at ? this.state.postDetails.updated_at.slice(0, 10).split('-').reverse().join('-') : null}</p>
             <p>Posted by: {this.state.postAuthor}</p>
-
           </div>
         </section>
+
         <section className="button-container">
-
-
           <button className="form-button" onClick={this.handleToggle}>
             Write a comment
           </button>
         </section>
+
         <section className="comment-section">
           {this.state.isActive ?
             <CreateComment handleFormSubmit={this.handleFormSubmit} />

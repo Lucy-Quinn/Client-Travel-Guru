@@ -50,6 +50,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .profile-info p {
   margin: 10px 0;
 }

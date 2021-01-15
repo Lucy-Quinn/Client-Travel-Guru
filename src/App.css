@@ -10,9 +10,6 @@ body {
   min-height: 100vh;
   color: rgb(53, 52, 52);
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
 }
 
 .full-page {
@@ -20,6 +17,7 @@ body {
   height: 100vh;
   min-height: 100vh;
 }
+
 .buttons {
   padding: 10px 20px;
   border-radius: 10px;
@@ -51,9 +49,11 @@ p {
 h1 {
   font-size: 4rem;
 }
+
 h2 {
   font-size: 3rem;
 }
+
 h3 {
   font-size: 2.6rem;
 }
@@ -103,15 +103,16 @@ button[disabled] {
   background-color: #cccccc;
   color: #666666;
 }
+
 .asterisk {
   color: red;
 }
+
 input {
   padding: 5px 0px 5px 5px;
 }
 
 /* Buttons */
-
 .button-container {
   margin: 0 auto;
   width: 200px;
@@ -164,12 +165,10 @@ input {
   margin: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: flex-start;
 }
 
 /* Edit forms */
-
 .edit-form-header {
   display: flex;
   align-items: center;
@@ -187,9 +186,11 @@ input {
 .travel-log-form-height {
   height: 650px;
 }
+
 .post-form-height {
   height: 800px;
 }
+
 .edit-form > label {
   font-size: 1.6rem;
 }
@@ -208,6 +209,7 @@ input {
   border: none;
   overflow: hidden;
 }
+
 @media (min-width: 1024px) {
   .edit-form {
     margin: 10px 100px 0px 100px;
@@ -219,6 +221,7 @@ input {
     margin: 10px 200px 0px 200px;
   }
 }
+
 /* sign up and login  */
 .sign-up-login-background {
   background: linear-gradient(267deg, #70f7c8, #ffffff);
@@ -231,6 +234,7 @@ input {
   border-radius: 10px;
   opacity: 0.8;
 }
+
 @media (min-width: 768px) {
   .sign-up-login-body {
     margin: 20px 100px;

@@ -17,13 +17,11 @@ class MyFavorites extends React.Component {
 
   getFavorites = () => {
     const userId = this.props.user._id;
-
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/favoritePosts/${userId}`, {
         withCredentials: true,
       })
       .then((response) => {
-        console.log("reponse", response.data);
         const favoritesArr = response.data;
         this.setState({ favoritesArr });
       })
@@ -35,8 +33,7 @@ class MyFavorites extends React.Component {
       .delete(`${process.env.REACT_APP_API_URL}/api/deleteFavorite/${postId}`, {
         withCredentials: true,
       })
-      .then((response) => {
-        console.log("reponse", response);
+      .then(() => {
         this.getFavorites();
       })
       .catch((err) => console.log(err));
@@ -45,8 +42,8 @@ class MyFavorites extends React.Component {
   render() {
     return (
       <div className="my-posts-container">
-
         <h1 className="my-posts-header">My Favorite Posts</h1>
+
         {this.state.favoritesArr && this.state.favoritesArr.length > 0 ? (
           this.state.favoritesArr.map((post) => {
             return (

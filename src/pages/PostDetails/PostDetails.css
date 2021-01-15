@@ -5,9 +5,9 @@ body {
 
 .post-header > h1 {
   margin: 20px;
-  /* width: 90%; */
   text-align: center;
 }
+
 #post-image {
   width: 100%;
   height: auto;
@@ -29,6 +29,7 @@ body {
   border: none;
   background-color: #fff;
 }
+
 .favorites-button > img {
   width: 30px;
 }

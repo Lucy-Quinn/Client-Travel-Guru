@@ -15,6 +15,7 @@ class Profile extends React.Component {
     image: "",
     _id: "",
   };
+
   componentDidMount() {
     const { userId } = this.props.match.params;
     axios
@@ -66,6 +67,7 @@ class Profile extends React.Component {
             <button className="edit-profile-button">Edit Profile</button>
           </Link>
         </header>
+
         <section className="profile-info">
           <p>
             <b>Email: </b>
@@ -85,6 +87,7 @@ class Profile extends React.Component {
           </p>
           <p>{this.state.description}</p>
         </section>
+
         <section className="profile-buttons-container">
           <Link exact to={`/favoritePosts/${this.state._id}`}>
             <button className="profile-button">Favorite Posts</button>

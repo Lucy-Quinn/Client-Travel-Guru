@@ -22,8 +22,6 @@ class CreateTravelLog extends React.Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     const { title, country, city, description } = this.state;
-    console.log("userId", this.props);
-
     axios
       .post(
         `${process.env.REACT_APP_API_URL}/api/createTravelLog`,
@@ -40,7 +38,6 @@ class CreateTravelLog extends React.Component {
     return (
       <div>
         <header className="edit-form-header">
-
           <h1>Create Travel Log</h1>
         </header>
 

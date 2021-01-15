@@ -3,8 +3,9 @@ import './SearchBar.css'
 
 class SearchBar extends React.Component {
     state = {
-        search: '',
+        search: ''
     }
+
     handleSearch = (event) => {
         const { value, name } = event.target;
         this.setState({ [name]: value });

@@ -22,7 +22,6 @@ class Login extends Component {
 
   render() {
     const { username, password } = this.state;
-
     return (
       <div className="sign-up-login-background">
         <div className="sign-up-login-body">

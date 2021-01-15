@@ -12,16 +12,13 @@ class MyPosts extends React.Component {
 
   componentDidMount() {
     const { userId } = this.props.match.params;
-
     this.setState({ userId });
-
     axios
       .get(
         `${process.env.REACT_APP_API_URL}/api/myPosts/${userId}`, 
         {withCredentials: true}
       )
       .then((response) => {
-        console.log("reponse", response);
         const postsArr = response.data;
         this.setState({ postsArr });
       })
@@ -31,8 +28,8 @@ class MyPosts extends React.Component {
   render() {
     return (
       <div className="my-posts-container">
-
       <h1 className="my-posts-header">My Travel Posts</h1>
+      
         {this.state.postsArr && this.state.postsArr.length > 0 ? (
           this.state.postsArr.map((post) => {
             return (

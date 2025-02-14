@@ -188,17 +188,17 @@ TravelLog model (backlog)
 
 ### Trello
 
-[Link to your trello board](https://trello.com/b/KYujgK2d/travel-guru) or picture of your physical board
+[Link to the trello board](https://trello.com/b/KYujgK2d/travel-guru)
 
 ### Git
 
-The url to your repository and to your deployed project
+The url to the repository and to the deployed project
 
 [Client repository Link](https://github.com/Lucy-Quinn/Client-Travel-Guru)
 
 [Server repository Link](https://server-travel-guru.onrender.com)
 
-[Deployed App Link](https://travel-guru-iqpy.onrender.com)
+[Deployed App Link](https://travel-guru-iqpy.onrender.com) (Deployed via [Render](https://render.com/))
 
 ### Slides
 

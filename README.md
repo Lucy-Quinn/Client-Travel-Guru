@@ -198,7 +198,7 @@ The url to your repository and to your deployed project
 
 [Server repository Link](https://server-travel-guru.onrender.com)
 
-[Deployed App Link](https://client-travel-guru.onrender.com)
+[Deployed App Link](https://travel-guru-iqpy.onrender.com)
 
 ### Slides
 
